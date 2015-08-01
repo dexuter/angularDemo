@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width" />
+	<title>提现规则</title>
+	<link rel="stylesheet" href="../../static/css/common.css" />
+	<link rel="stylesheet" href="../../static/css/stock.css" />
+</head>
+<body >
+
+	<div class="idx4_wp" ng-controller="withdrawCtrl">
+
+		<div class="ln1 b_b">
+			<span class="t">如何计算？</span>
+		</div>
+
+		<div class="ln2 b_b">
+			<div class="ln2_tip clearfix">
+				<div class="tip_item"><span class="t1">盈利</span><em class="tip_qus"></em></div>
+				<div class="tip_item tip_org">提现比</div>
+				<div class="tip_item">可提现金</div>
+			</div>
+
+			<div class="ln2_con clearfix">
+				<div class="tip_item"><span class="ct1" ng-bind="withdraw.nowProfit != undefined? withdraw.nowProfit:'--'">--</span><span class="ct2">x</span></div>
+				<div class="tip_item "><span class="ct21 tip_org" ng-bind="withdraw.withDrawRate != undefined? withdraw.withDrawRate:'--'">--</span><span class="ct22">=</span></div>
+				<div class="tip_item" ng-bind="withdraw.trueWithDrawMoney != undefined ? withdraw.trueWithDrawMoney:'--'">--</div>
+			</div>
+		</div>
+
+		<div class="ln3 b_b">
+			<span class="t">提现说明：</span>
+		</div>
+
+		<div class="ln4 b_b">
+			<ul class="ln4_list">
+				<li class="list_item">1、最少提现10000元；</li>
+				<li class="list_item">2、最少提现10000元；</li>
+				<li class="list_item">3、最少提现10000元；</li>
+				<li class="list_item">4、最少提现10000元；</li>
+				<li class="list_item">5、最少提现10000元；</li>
+				<li class="list_item">6、最少提现10000元；</li>
+			</ul>
+		</div>
+
+		<div class="ln5 b_b">
+			<div class="ln5_link_wp">
+				<a href="#" class="ln5_link">
+					<span class="t">提取记录</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="ln6">
+			<div class="ln6_wp clearfix">
+				<div class="c_l">
+					<span class="t1">可提现金：</span>
+					<span class="t2">¥<span ng-bind="withdraw.trueWithDrawMoney ? withdraw.trueWithDrawMoney:'--'"></span></span>
+				</div>
+				<div class="c_r">
+					<!-- btn_active / btn_disable -->
+					<a href="javascript:void(0)" class="link1 " ng-class="{'btn_active':canWithdraw, 'btn_disable': !canWithdraw}" ng-click="submit()">提现</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<script src="../../static/js_stock/config.js"></script>
+	<script data-main="service/trade/index04" src="../../static/js_stock/lib/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*
+ * @author : lubingan
+ * @data   : 2015/07/17
+ * @desc   : 周二股基免费率
+ **/
+
+body { background-color: #f3f3f3; }
+img { max-width: 100%; }
+
+.tg_3 { background-color: #e3503d; }
+.tg_3 .hl { color: #dc4437; }
+.tg_3 .col_half { float: left; width: 50%; }
+
+.tg_3 .guide { padding: 25px 15px 0; background-color: #fce370; }
+.tg_3 .guide_hd { height: 40px; font-size: 16px; line-height: 40px; text-align: center; background-color: #a72a2a; color: #fff; }
+.tg_3 .guide_bd { position: relative; padding: 20px 25px 35px; font-size: 12px; line-height: 18px; background-color: #fff; color: #666; }
+.tg_3 .guide_bd:after { content: ''; position: absolute; right: 0; bottom: 0; display: block; border: 13px solid #cecece; border-right-color: #fce370; border-bottom-color: #fce370; }
+
+.tg_3 .products { padding: 15px 15px 30px; background-color: #fce370; }
+.tg_3 .products .pro_btn { display: block; height: 40px; margin: 35px auto 0; font-size: 18px; line-height: 40px; text-align: center; background-color: #ff9900; color: #fff; }
+.tg_3 .product_group + .product_group { margin-top: 25px; }
+.tg_3 .product_group .hd { text-align: center; }
+.tg_3 .product_group .hd + .bd { margin-top: 10px; }
+.tg_3 .product_group .hd .caption { font-size: 20px; font-weight: 700; line-height: 32px; color: #e3503d; }
+.tg_3 .product_group .hd .caption img { height: 32px; margin-right: 10px; vertical-align: top; }
+.tg_3 .pro_item_hd { height: 24px; font-size: 12px; line-height: 24px; text-align: center; background-color: #ff9900; color: #fff; }
+.tg_3 .pro_item_bd { padding-top: 8px; padding-bottom: 8px; font-size: 12px; line-height: 16px; background-color: #fff; border: 1px solid #dcdcdc; color: #666; }
+.tg_3 .pro_item + .pro_item { margin-top: 18px; }
+.tg_3 .pro_item .rating { text-align: center; border-right: 1px solid #ffd699; }
+.tg_3 .pro_item .rating .num { font-size: 30px; line-height: 1; color: #ff9900; }
+.tg_3 .pro_item .rating .num .unit { font-size: 12px; }
+.tg_3 .pro_item .controls { padding-left: 25px; padding-right: 25px; white-space: nowrap; }
+.tg_3 .pro_item .controls .pro_btn { height: 24px; margin-top: 3px; font-size: 12px; line-height: 24px; }
+
+.tg_3 .notice { padding: 50px 15px 30px; }
+.tg_3 .notice_hd { height: 50px; font-size: 18px; line-height: 50px; text-align: center; background-color: #ff9900; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #fff; }
+.tg_3 .notice_bd {
+    padding: 20px 15px 115px 15px;
+    font-size: 12px;
+    line-height: 20px;
+    background: #f6f2de url(../../../img/activity/fund/tg_3/clock.png) no-repeat 90% 90%;
+    -webkit-background-size: 109px 115px;;
+            background-size: 109px 115px;;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #7c120a;
+}
+.tg_3 .memo { padding: 0 15px 30px; font-size: 12px; color: #fff; }
+.tg_3 .memo p + p { margin-top: 5px; }

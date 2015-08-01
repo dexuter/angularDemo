@@ -1,0 +1,20 @@
+{
+    "message": "success", 
+    "statusCode": "200", 
+    "data": {
+        "userId": "1", 
+        "accountId": 1, 
+        "capital": 5000, 
+        "todayMoney": 2000, 
+        "totalMoney": 5000, 
+        "freezeMoney": 1000, 
+        "totalMarketValue": 2000, 
+        "totalProfit": 3230.12, 
+        "positionProfit": 234.535, 
+        "createTime": "2015-07-10 15:57:47", 
+        "status": 0, 
+        "updateTime": "2015-07-10 15:57:47", 
+        "totalDrawMoney": 2100, 
+        "typeId": 0
+    }
+}

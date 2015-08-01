@@ -1,0 +1,184 @@
+/*
+ * @author : zym
+ * @data   : 2015/05/28/
+ * @desc   : APP基金(mobile)
+ **/ 
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    基金通用    -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+body{ background-color: #f7f7f7;}
+/*ico*/
+.fund_ico{ display: inline-block; width: 24px; height: 24px; vertical-align: middle;}
+.fund_ico_fav{ background: url(../img/fund/ico_fav.png) no-repeat; background-size: 24px 24px;}
+.active .fund_ico_fav{ background: url(../img/fund/ico_fav_active.png) no-repeat; background-size: 24px 24px;}
+/*tab*/
+.fund_tab_1{ background-color: #fff; border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1;}
+.fund_tab_1 .tab_hd{}
+.fund_tab_1 .tab_control{ border-bottom: 1px solid #d1d1d1;}
+.fund_tab_1 .tab_control_item{ float: left; width: 50%; height: 38px; border-bottom: 2px solid transparent; margin-bottom: -1px;}
+.fund_tab_1 .tab_control_item .txt{ display: block; height: 38px; line-height: 38px; text-align: center; color: #606060; font-size: 15px;}
+.fund_tab_1 .tab_control_item.active{ border-bottom-color: #2298f3;}
+.fund_tab_1 .tab_control_item.active .txt{ color: #2298f3; }
+.fund_tab_1 .tab_bd{}
+.fund_tab_1 .tab_con{ display: none;}
+.fund_tab_1 .tab_con.active{ display: block;}
+/*table 1*/
+.fund_table{}
+.fund_table th,
+.fund_table td{ vertical-align: middle; font-size: 14px;}
+.fund_table th{ height: 44px; border-bottom: 1px solid #ccc; background-color: #f7f7f7; color: #999;}
+.fund_table td{ padding-top: 12px; padding-bottom: 12px; border-bottom: 1px solid #ddd; background-color: #fff; line-height: 21px;}
+.fund_table th.c_l,
+.fund_table td.c_l{ padding-left: 15px; text-align: left;}
+.fund_table th.c_r,
+.fund_table td.c_r{ padding-right: 15px;text-align: right;}
+.fund_table_2 th{ color: #000;}
+/*foot fixed*/
+.fund_fixed_foot_wrap{ height: 50px;}
+/*foot btn*/
+.fund_ft_btn_base{ display: block; height: 50px; position: fixed; bottom:0; left: 0; right: 0; z-index: 100;} 
+.fund_ft_btn_base .inner{ height: 44px; padding: 3px 0; text-align: center; color: #fff;}
+.fund_ft_btn_base .line_1{ height: 28px; line-height: 30px; font-size: 20px;}
+.fund_ft_btn_base .line_2{ height: 16px; line-height: 16px; font-size: 12px;}
+.fund_ft_btn_disable .inner{ background-color: #999;}
+.fund_ft_btn_primary .inner{ background-color: #ff9900;}
+/*no data*/
+.fund_nodata_wrap{ padding: 40px 0;}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------  产品详情页 -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.fund_detail_container{}
+/*box banner*/
+.fund_box_banner{ background-color: #2298f3;}
+.fund_box_banner .pro_hd{ height: 48px; padding: 8px 15px 0; line-height: 24px; font-size: 14px; color: #fff;}
+.fund_box_banner .pro_name{ float: left; width: 80%;}
+.fund_box_banner .pro_fav_wrap{ float: right; width: 24px; padding: 4px;}
+.fund_box_banner .pro_income_1{ margin-top: 20px; text-align: center; color: #fff;}
+.fund_box_banner .pro_income_1 .income_val{ height: 60px; line-height: 60px; font-size: 54px; }
+.fund_box_banner .pro_income_1 .income_val .percent{ font-weight: bold; font-size: 16px;}
+.fund_box_banner .pro_income_1 .income_name{ height: 18px; line-height: 18px; font-size: 12px;}
+.fund_box_banner .pro_income_1 .income_level{ height: 18px; line-height: 18px; font-size: 12px;}
+.fund_box_banner .pro_income_1 .lv_tit{}
+.fund_box_banner .pro_income_1 .lv_val{}
+.fund_box_banner .pro_ft{ height: 24px; margin-top: 25px; padding: 0 15px 10px; line-height: 24px; font-size: 12px; color: #fff;}
+.fund_box_banner .pro_buy{ float: left; width: 40%;}
+.fund_box_banner .pro_buy .num{}
+.fund_box_banner .pro_net{ float: right; width: 58%; text-align: right;}
+.fund_box_banner .pro_net .net_tit{}
+.fund_box_banner .pro_net .net_val{}
+.fund_box_banner .pro_net .net_date{}
+/*box chart*/
+.fund_box_chart{ padding-top: 10px; background-color: #fff;}
+.fund_box_chart .chart_tips_wrap{ height: 36px; padding: 0 15px;}
+.fund_box_chart .chart_tips_wrap .more{ float: right;}
+.fund_box_chart .chart_tips_wrap .more .name{ float: left; width: 140px; text-align: right; color: #666;}
+.fund_box_chart .chart_tips_wrap .more .val{ float: left; width: 55px; text-align: right;}
+.fund_box_chart .chart_tips_wrap .line{ height: 18px; line-height: 18px; font-size: 12px;}
+.fund_box_chart .chart_wrap{ min-height: 170px; padding: 0 15px;}
+.fund_box_chart .chart_wrap img{ width: 100%;}
+.fund_box_chart .chart_contorl{}
+.fund_box_chart .control_bar{ padding: 20px 0;}
+.fund_box_chart .control_list{ display: block; width: 100%;-webkit-tap-highlight-color:rgba(0,0,0,0.0);}
+.fund_box_chart .control_item{ float: left; width: 25%; position: relative; z-index: 10;}
+.fund_box_chart .control_item .control_dot{ display: block; width: 12px; height: 12px; margin-left: -10px; border: 4px solid #f3f3f3; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-radius: 10px; background-color: #cdd2d7; background-clip: padding-box; position: absolute; top: 0; left: 50%; z-index: 12;}
+.fund_box_chart .control_item .control_bg{ display: block; width: 100%; height: 5px;  background-color: #f3f3f3; position: absolute; top: 7px; left: 0; z-index: 11;}
+.fund_box_chart .control_item .control_txt{ padding-top: 20px; height: 28px; line-height: 28px; text-align:center;  font-size: 12px; color: #666;}
+.fund_box_chart .control_item.active .control_dot{background-color: #2298f3;}
+.fund_box_chart .control_item.active .control_bg{ }
+.fund_box_chart .control_item.active .control_txt{ color: #2298f3;}
+/*box pie chart*/
+.fund_box_piechart{ padding: 0 15px 10px;}
+.fund_box_piechart .piechart_updata_time{ height: 52px; line-height: 52px; font-size: 14px; color: #4f4f4f;}
+.fund_box_piechart .piechart_wrap{ width: 180px; height: 180px; margin: 0 auto;}
+.fund_box_piechart .piechart_wrap img{ width: 100%;}
+/*box time*/
+.fund_box_time{ background-color: #fff;}
+.fund_box_time .attr_list{}
+.fund_box_time .attr_item{ float: left; width: 50%; padding: 20px 0;}
+.fund_box_time .attr_inner{ padding-left: 15px;}
+.fund_box_time .attr_item:first-child .attr_inner{ border-right: 1px solid #ddd; }
+.fund_box_time .attr_name{ height: 21px; line-height: 21px; font-size: 15px; color: #000;}
+.fund_box_time .attr_val{ height: 36px; line-height: 36px; font-size: 24px; font-weight: bold; color: #f60;}
+.fund_box_time .tips{ padding: 0 15px 20px; line-height: 1.8; font-size: 12px; color: #999;}
+/*history box*/
+.fund_history_box{}
+/*box 1*/
+.fund_box_1{ border-bottom: 1px solid #d1d1d1; background-color: #fff;}
+.fund_box_1 .box_hd{ height: 42px; padding: 0 15px;  border-bottom: 1px solid #d1d1d1; background-color: #f7f7f7; line-height: 42px; font-size: 15px; color: #000;}
+.fund_box_1 .box_hd .txt{}
+.fund_box_1 .box_bd{}
+.fund_detail_table{}
+.fund_detail_table th,
+.fund_detail_table td{ height: 42px; border-bottom: 1px solid #f3f3f3; vertical-align: middle; font-size: 13px;}
+.fund_detail_table th{ color: #999;}
+.fund_detail_table td{ color: #666;}
+.fund_detail_table tr:last-child td{ border-bottom: none;}
+.fund_detail_table th.c_l,
+.fund_detail_table td.c_l{ padding-left: 15px; text-align: left;}
+.fund_detail_table th.c_r,
+.fund_detail_table td.c_r{ padding-right: 15px; text-align: right;}
+.fund_detail_table .pre_fee{ line-height: 20px; text-decoration: line-through; color: #999;}
+.fund_detail_table .now_fee{ margin-left: 10px; line-height: 20px; color: #f60;}
+.fund_detail_table .txt{ display: inline-block; vertical-align: middle;}
+.fund_detail_table .fund_ico_more{ display: inline-block; width: 20px; height: 20px; background: url(../img/fund/banner_next.png) no-repeat center center; background-size: 20px 20px; vertical-align: middle;}
+/*box 2*/
+.fund_box_2{}
+/*box 3*/
+.fund_box_3{}
+.fund_box_3 .box_update_time{ height: 52px; padding: 0 15px; line-height: 52px; font-size: 14px; color: #606060;}
+.fund_box_3 .box_hd{ height: 46px; padding: 0 15px; border-bottom: 1px solid #d1d1d1; background-color: #f7f7f7; line-height: 46px; font-size: 14px; color: #333;}
+.fund_box_3 .box_hd .attr_1{ float: left; width: 80px;}
+.fund_box_3 .box_hd .attr_2{ float: left;}
+.fund_box_3 .box_hd .attr_3{ float: right; color: #999;}
+.fund_box_3 .box_bd{ background-color: #fff;}
+/*position list*/
+.fund_position_list{}
+.fund_position_list .position_item{ padding:15px; border-bottom: 1px solid #f3f3f3;}
+.fund_position_list .position_name{ height: 32px; line-height: 32px; font-size: 14px; color: #666; overflow: hidden;}
+.fund_position_list .position_info{}
+.fund_position_list .progress_bar_wrap{ float: left; width: 75%; padding: 10px 0;}
+.fund_position_list .progress_bar{ width: 100%; height: 16px; position: relative; z-index: 10;}
+.fund_position_list .progress_bg{ width: 100%; height: 16px; border-radius: 0 4px 4px 0; background-color: #eee; position: absolute; left: 0; top: 0; z-index: 11; }
+.fund_position_list .progress_inner{ height: 16px; line-height: 16px;position: absolute; left: 0; top: 0; z-index: 12;}
+.fund_position_list .progress_inner_animate{  height: 16px; line-height: 16px; border-radius: 0 4px 4px 0; overflow: hidden; -webkit-animation: width .5s ease; }
+.fund_position_list .progress_bar .income{ display: block; height: 16px; padding-left: 10px; line-height: 16px; text-align: left; font-size: 14px; color: #fff; position: absolute; top: 0; left: 0; z-index: 13;}
+.fund_position_list .position_income{ float: right; width: 24%; height: 36px; line-height: 36px; text-align:right;}
+.fund_position_list .item_posi .progress_inner_animate{ background-color: #f75352;}
+.fund_position_list .item_nega .progress_inner_animate{ background-color: #10d4c8;}
+/*record list*/
+.fund_record_list{}
+.fund_record_list .record_item{ padding: 0 15px;}
+.fund_record_list .record_item:last-child .record_item_inner{ border-bottom: none;}
+.fund_record_list .record_item_inner{ padding: 15px 0; border-bottom: 1px solid #e6e6e6;}
+.fund_record_list .record_line_1{ float: left; width: 100%; line-height: 24px;}
+.fund_record_list .record_line_2{ float: left; width: 100%; line-height: 24px; color: #5a5a5a;}
+.fund_record_list .r_type{ float: left; font-size: 14px; font-weight: bold; color: #373737;}
+.fund_record_list .r_time{ float: right; font-size: 12px; color: #b4b4b4;}
+.fund_record_list .r_name{ float: left; width: 100%; height: 24px; font-size: 14px; overflow: hidden;}
+.fund_record_list .r_money{ float: left; width: 120px;}
+.fund_record_list .r_state{ float: right; width: 72px;}
+.fund_record_list .r_state .state{ display: block; width: 72px; height: 18px; border-style: solid; border-width: 1px; border-radius: 9px; line-height: 18px; text-align: center; font-size: 12px;}
+.fund_record_list .r_state .state_1{ border-color: #2298f2; color: #2298f2;}
+.fund_record_list .r_state .state_2{ border-color: #f90; color: #f90;}
+.fund_record_list .r_state .state_3{ border-color: #999; color: #999;}
+/*foot adv*/
+.fund_foot_adv_wrap{ border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; background-color: #fff;}
+.fund_foot_adv_wrap .adv_list{ display: block;}
+.fund_foot_adv_wrap .adv_item{ float: left; width: 31%; padding: 4px 1%;}
+.fund_foot_adv_wrap .adv_item .inner_a{ display: block; padding: 6px 0;}
+.fund_foot_adv_wrap .adv_item .inner{ display: block; border-right: 1px dashed #d3d3d3;}
+.fund_foot_adv_wrap .adv_item:last-child .inner{ border-right: none;}
+.fund_foot_adv_wrap .ico{ display: block; width: 30px; height: 30px; margin: 0 auto;}
+.fund_foot_adv_wrap .ico_1{ background: url(../img/fund/adv_1.png) no-repeat; background-size: 30px 30px;}
+.fund_foot_adv_wrap .ico_2{ background: url(../img/fund/adv_2.png) no-repeat; background-size: 30px 30px;}
+.fund_foot_adv_wrap .ico_3{ background: url(../img/fund/adv_3.png) no-repeat; background-size: 30px 30px;}
+.fund_foot_adv_wrap .txt{ display: block; height: 24px; line-height: 24px; text-align: center; font-size: 12px; color: #2298f3;}
+/*宽度*/
+@-webkit-keyframes width {
+	0%{ width: 0%}	
+	100%{ width: 100%;}
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------  分享页面 -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.fund_share_container img{ width: 100%;}

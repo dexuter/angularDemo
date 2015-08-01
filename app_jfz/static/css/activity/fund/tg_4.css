@@ -1,0 +1,38 @@
+/*
+ * @author : zym
+ * @data   : 2015/07/27
+ * @desc   : 百元购基
+ **/
+.tg_4{ padding: 0 15px; background-color: #ececec;}
+.tg_4 .banner{ margin: 0 -15px;}
+.tg_4 .banner img{ width: 100%;}
+.tg4_box_1{ margin-top: 54px; background-color: #f7ef96; border-radius: 5px; position: relative; z-index: 100;}
+.tg4_box_1 .box_hd{ width: 320px; height: 52px; margin-left: -160px; background: url(../../../img/activity/fund/tg_4/tit_bg.png) no-repeat center center; background-size: 320px 52px; position: absolute; z-index: 101; top: -37px; left: 50%;}
+.tg4_box_1 .box_bd{ padding: 20px 7px 10px 7px;}
+.tg4_box_1 .pro_list{}
+.tg4_box_1 .pro_item{ margin-bottom: 5px; background-color: #fffcd9; border-radius: 3px; position: relative; z-index: 110;}
+.tg4_box_1 .pro_item a{ display: block; padding: 8px 12px;}
+.tg4_box_1 .pro_item .pro_name{ height: 24px; line-height: 24px; font-size: 15px; color: #666; overflow: hidden;}
+.tg4_box_1 .pro_item .pro_id{}
+.tg4_box_1 .pro_item .pro_txt{}
+.tg4_box_1 .pro_item .pro_income{ height: 24px; line-height: 24px; overflow: hidden;}
+.tg4_box_1 .pro_item .income_tit{ font-size: 12px; color: #666;}
+.tg4_box_1 .pro_item .income_val{ font-size: 15px; color: #ff6600;}
+.tg4_box_1 .pro_item .income_val .precent{}
+.tg4_box_1 .pro_item .pro_control{ width: 80px; height: 24px; position: absolute; z-index: 111; bottom: 8px; right: 12px;}
+.tg4_box_1 .pro_item .pro_btn{ display: block; width: 80px; height: 24px; background-color: #f60; border-radius: 3px; line-height: 24px; text-align: center; font-size: 12px; color: #fff;}
+.tg4_notice{ margin-top: 5px; padding: 14px 7px 7px 7px; background-color: #f7ef96; border-radius: 5px;}
+.tg4_notice .notice_line{ position: relative; z-index: 200;}
+.tg4_notice .notice_line .line{ width: 12px; height: 32px; background: url(../../../img/activity/fund/tg_4/ico_1.png) no-repeat center center; background-size: 12px 32px; position: absolute; top: -32px; z-index: 201;}
+.tg4_notice .notice_line .line_left{ left: 3px;}
+.tg4_notice .notice_line .line_right{ right: 3px;}
+.tg4_notice .notice_inner{ padding: 12px; background-color: #fff; border-radius: 3px; color: #333;}
+.tg4_notice .notice_hd{ height: 32px; line-height: 32px; font-size: 16px;}
+.tg4_notice .notice_bd{}
+.tg4_notice .notice_list{}
+.tg4_notice .notice_item{ margin-top: 5px; padding-left: 16px; line-height: 18px; font-size: 12px; position: relative; z-index: 210;}
+.tg4_notice .notice_item .notice_num{ height: 18px; line-height: 18px; left: 0; top: 0; position: absolute; z-index: 211;}
+.tg4_notice .notice_item p{}
+.tg4_notice .notice_item p>span{ color: #666;}
+.tg4_notice .notice_itps{ padding: 10px 0; font-size: 12px; color: #e32424;}
+.tg4_bottom_tips{ padding: 15px 0; line-height: 18px; font-size: 12px; color: #666;}

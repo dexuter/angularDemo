@@ -1,0 +1,14 @@
+{
+    "message": "success", 
+    "statusCode": "200", 
+    "data": {
+        "accountId": "1", 
+        "totalMoney": 2000, 
+        "todayMoney": 5000, 
+        "todayProfitRate": 0.2345, 
+        "totalProfitRate": 0.1734, 
+        "nowProfit": 3230.12, 
+        "marketValue": 234.535, 
+        "capital": 5000
+    }
+}

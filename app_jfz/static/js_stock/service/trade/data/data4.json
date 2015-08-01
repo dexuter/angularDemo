@@ -1,0 +1,38 @@
+{
+    "message": "success", 
+    "statusCode": "200", 
+    "data": [
+        {
+            "stockCode": 7689, 
+            "stockName": "宝钢集团"
+        }, 
+        {
+            "stockCode": 7659, 
+            "stockName": "宝钢集团"
+        },
+        {
+            "stockCode": 7689, 
+            "stockName": "宝钢集团"
+        }, 
+        {
+            "stockCode": 7659, 
+            "stockName": "宝钢集团"
+        },
+        {
+            "stockCode": 7689, 
+            "stockName": "宝钢集团"
+        }, 
+        {
+            "stockCode": 7659, 
+            "stockName": "宝钢集团"
+        },
+        {
+            "stockCode": 7689, 
+            "stockName": "宝钢集团"
+        }, 
+        {
+            "stockCode": 7659, 
+            "stockName": "宝钢集团"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "buyList": [
+        {
+            "price": 50.12, 
+            "amount": 2000
+        }, 
+        {
+            "price": 49.02, 
+            "amount": 2000
+        }, 
+        {
+            "price": 48.32, 
+            "amount": 2000
+        }, 
+        {
+            "price": 45.22, 
+            "amount": 2000
+        }, 
+        {
+            "price": 53.05, 
+            "amount": 2000
+        }
+    ], 
+    "sellList": [
+        {
+            "price": 45.12, 
+            "amount": 2000
+        }, 
+        {
+            "price": 43.02, 
+            "amount": 2000
+        }, 
+        {
+            "price": 42.32, 
+            "amount": 2000
+        }, 
+        {
+            "price": 41.22, 
+            "amount": 2000
+        }, 
+        {
+            "price": 56.05, 
+            "amount": 2000
+        }
+    ]
+}

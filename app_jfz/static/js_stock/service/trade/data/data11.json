@@ -1,0 +1,32 @@
+{
+    "message": "success",
+    "statusCode": "200",
+    "data": {
+        "index": 1,
+        "number": 1,
+        "records": [
+	        {
+	        	"id": "123456",
+	        	"dealTime": "2015-08-11 12:12:12",
+	        	"stockCode": "123456",
+	        	"stockName": "中国重车",
+	        	"type":	"1",
+	        	"typeDesc": "买入",
+	        	"tradeMoney": "123456.78",
+	        	"dealPrice": "12.12",
+	        	"dealNum": "2000"
+	        },
+	         {
+	        	"id": "123456",
+	        	"dealTime": "2015-08-11 12:12:12",
+	        	"stockCode": "123456",
+	        	"stockName": "中国重车",
+	        	"type":	"2",
+	        	"typeDesc": "卖出",
+	        	"tradeMoney": "123456.78",
+	        	"dealPrice": "12.12",
+	        	"dealNum": "2000"
+	        }
+        ]
+    }
+}

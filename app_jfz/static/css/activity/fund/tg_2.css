@@ -1,0 +1,58 @@
+/*
+* @author:lubingan
+* @data:2015/07/04
+* @desc:金斧子APP2.0 专题
+**/
+@charset "UTF-8";
+body { background-color: #f3f3f3; }
+img { max-width: 100%; }
+.tg_2 { padding-bottom: 12px; }
+.tg_2 .hl { color: #e40905 }
+.tg_2 .banner { position: relative; z-index: -1; margin-bottom: -60px; min-height: 234px; }
+.tg_2 .box { margin-left: 12px; margin-right: 12px; box-shadow: 0 4px 0 0 rgba(186, 186, 186, 0.1); border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.tg_2 .box + .box { margin-top: 24px; }
+.tg_2 .box_hd { padding-top: 26px; background-color: #fff; border-top-left-radius: 4px; border-top-right-radius: 4px; }
+.tg_2 .box_hd .title { position: relative; margin: 0 24px; font-size: 14px; line-height: 1.2; text-align: center; }
+.tg_2 .box_hd .title::before { content: ''; position: absolute; left: 0; top: 50%; margin-top: -1px; width: 100%; height: 1px; font-size: 0; line-height: 0; background-color: #333; }
+.tg_2 .box_hd .caption { position: relative; display: inline-block; padding: 0 12px; background-color: #fff; color: #333; }
+.tg_2 .box_hd .jag { margin-top: 16px; }
+.tg_2 .box_hd + .box_bd { border-top-left-radius: 0; border-top-right-radius: 0; }
+.tg_2 .box_bd { font-size: 12px; line-height: 1.5; background-color: #fff; color: #787878; border-radius: 4px; }
+.tg_2 .box_perface .box_bd { padding: 20px 24px 24px; }
+.tg_2 .box_product .box_bd { padding: 16px 12px 24px; }
+.tg_2 .box_product .item { border: 1px solid #dedede; }
+.tg_2 .box_product .item + .item { margin-top: 12px; }
+.tg_2 .box_product .ribbon { position: absolute; left: -24px; top: 10px; width: 100px; height: 18px; font-size: 12px; line-height: 1.5; font-style: normal; text-align: center; background-color: #ff8400; color: #fff; -webkit-transform: rotate(-35deg); transform: rotate(-35deg); }
+.tg_2 .box_product .item_hd { position: relative; padding-top: 12px; padding-bottom: 10px; background-color: #f5fafd; overflow: hidden; }
+.tg_2 .box_product .item_hd .title { text-align: center; }
+.tg_2 .box_product .item_hd .caption { font-size: 16px; line-height: 24px; color: #333; }
+.tg_2 .box_product .item_hd .stock_code,
+.tg_2 .box_product .item_hd .summary { font-size: 12px; line-height: 16px; color: #969696; }
+.tg_2 .box_product .item_hd .summary { padding: 6px 14px 0; text-align: left; }
+.tg_2 .box_product .earnings { min-height: 40px; padding: 20px 16px; font-size: 12px; line-height: 1; background-color: #fff; color: #969696; }
+.tg_2 .box_product .earnings .rate { float: left; }
+.tg_2 .box_product .earnings .rate .num { padding-bottom: 5px; font-size: 30px; line-height: 1; }
+.tg_2 .box_product .earnings .holder { float: right; text-align: left; }
+.tg_2 .box_product .earnings .holder .start { margin-top: 18px; }
+.tg_2 .box_product .earnings .holder .amount { margin-top: 5px; color: #333; }
+.tg_2 .box_product .controls .tg_btn { display: block; height: 44px; font-size: 18px; line-height: 44px; text-align: center; background-color: #2298f3; color: #fff; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.tg_2 .box_product .controls .tg_btn:active { background-color: #118ace; }
+.tg_2 .box_article .box_bd { padding: 14px; font-size: 12px; line-height: 18px; color: #969696; }
+.tg_2 .box_article .box_bd .lead { margin: 34px 0 14px; font-size: 16px; line-height: 24px; text-align: center; }
+.tg_2 .box_article .box_bd > .lead:first-child { margin-top: 0; }
+.tg_2 .box_feature .box_bd { padding: 24px 18px; }
+.tg_2 .box_feature .item { float: left; width: 33%; font-size: 14px; line-height: 18px; text-align: center; color: #787878; }
+.tg_2 .box_feature .item .mark { display: block; margin: 0 auto 10px; width: 70px; height: 70px; background: url(../../../img/activity/fund/tg_2/feature.png) no-repeat; -webkit-background-size: auto 70px; background-size: auto 70px; }
+.tg_2 .box_feature .item_rate .mark { background-position: 0 0; }
+.tg_2 .box_feature .item_risk .mark { background-position: -71px 0; }
+.tg_2 .box_feature .item_news .mark { background-position: -142px 0; }
+.tg_2 .box_risking { margin-top: 8px !important; }
+.tg_2 .box_risking .box_bd { padding: 10px 20px; }
+.tg_2 .box_risking .hl { color: #2298f3; }
+/* 医疗 */
+.tg_2 .box_jfz_choice .list { padding: 18px 8px 14px; }
+.tg_2 .box_jfz_choice .item { float: left; width: 50%; }
+.tg_2 .box_jfz_choice .item .cont { height: 153px; padding: 0 6px; margin: 2px; font-size: 12px; line-height: 16px; background-color: #2298f3; border-radius: 4px; color: #fff; }
+.tg_2 .box_jfz_choice .item .title { padding-top: 10px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px dashed rgba(255, 255, 255, .4); text-align: center; }
+.tg_2 .box_jfz_choice .item .title .caption { font-size: 18px; line-height: 24px; }
+.tg_2 .box_jfz_choice .item.separate .cont { background-color: #ff8400; }

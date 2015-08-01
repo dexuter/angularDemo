@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width" />
+	<title>我的持仓</title>
+	<link rel="stylesheet" href="../../static/css/common.css" />
+	<link rel="stylesheet" href="../../static/css/stock.css" />
+</head>
+<body >
+	
+	<div class="idx1_wp" ng-controller="stockBuyCtrl">
+
+		<div class="hd_con" id="hd_con">
+			<div class="hd_wp" id="hd_wp">
+				<ul class="hd_list clearfix" id="tab_btn">
+					<li class="hd_item hd_item_type1"><span class="hd_item_txt">我的持仓</span></li>
+					<li class="hd_item hd_item_type2"><span class="hd_item_txt">买入</span></li>
+					<li class="hd_item hd_item_type2"><span class="hd_item_txt">卖出</span></li>
+					<li class="hd_item hd_item_type2"><span class="hd_item_txt">撤单</span></li>
+					<li class="hd_item hd_item_type1"><span class="hd_item_txt">交易记录</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="bd_wp" id="bd_wp">
+			<div class="bd_scroller tab_wrap">
+				
+				<!-- 我的持仓 -->
+				<div class="base_tbl_wp posi_wp tab_box_item " id="posi_wp">
+					<div class="base_tbl_box">	
+						<table class="base_tbl_tbl">
+							<thead class="base_tbl_thd">
+								<tr class="b_b">
+									<th class="th1">名称/代码</th>
+									<th class="th2">市值/盈亏</th>
+									<th class="th3">持仓/可用</th>
+									<th class="th4">成本/现价</th>
+								</tr>
+							</thead>
+						</table>
+						
+						<div class="loading_content_wrap1" >
+
+							<div class="mod_loading_wrap mod_loading_state0" id="position1_loading">
+								<div class="loading1 ">
+									<span class="loading_ico"></span>
+									<span class="loading_txt">加载中...</span>
+								</div>
+								<div class="tip1"><span class="loading_txt">下拉刷新</span></div>
+								<div class="tip2"><span class="loading_txt">松开刷新</span></div>
+							</div>
+
+							<div class="loading_wp loading_list_wrap1" id="posi_list_wrap" ng-show="myPosition.length > 0">
+								<div class="loading_box_wp ">
+									<table  class="base_tbl_tbl ng-cloak" ng-show="myPosition.length > 0" >
+										<tbody class="base_tbl_tbd">
+
+											<tr class="tr b_b " ng-class="{'f_posi': item.isPosition, 'f_nega': !item.isPosition}" ng-repeat="item in myPosition">
+												<td class="td td1">
+													<div class="tbd_name_wp">
+														<div class="name" ng-bind="item.stockName"></div>
+														<div class="code" ng-bind="item.stockCode"></div>
+													</div>
+												</td>
+
+												<td class="td td2">
+													<div class="tbd_num_wp">
+														<div class="num1" ng-bind="item.marketValue"></div>
+														<div class="num2" ng-bind="item.profitRate"></div>
+													</div>
+												</td>
+
+												<td class="td td3">
+													<div class="tbd_num_wp">
+														<div class="num1" ng-bind="item.totalNum"></div>
+														<div class="num2" ng-bind="item.todayNum"></div>
+													</div>
+												</td>
+
+												<td class="td td4">
+													<div class="tbd_num_wp">
+														<div class="num1" ng-bind="item.costPrice"></div>
+														<div class="num2" ng-bind="item.nowPrice"></div>
+													</div>
+												</td>
+											</tr>
+
+										</tbody>
+
+									</table>
+								</div>
+							</div>
+
+							<!-- 没数据 -->
+							<div class="no_list_wp ng-cloak" ng-show="myPosition.length == 0">
+								<div class="tip_wp">
+									<div class="logo_wp">
+										<img class="logo_img" src="../../static/img/common/null_ico.png" alt="">
+									</div>
+									<div class="txt_wp">
+										<span class="t">暂无持仓记录</span>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 买入 & 卖出 -->
+				<div class="buy_wp tab_box_item" id="buy_wp">
+					
+					<section class="sec1">
+						<div class="sec1_wp clearfix">
+
+							<div class="con_lf">
+								<div class="ip_wp">
+									<div class="ip_wp_in ng-cloak">
+										<div class="inp_show_box clearfix" ng-click="showStockInput()" ng-show="!isShowStockIn">
+											<span class="fl_lf txt" ng-bind="stock.showCode ">股票代码</span>
+											<span class="fl_rg txt" ng-bind="stock.showName ">股票名称</span>
+										</div>
+
+										<div class="inp_box" ng-show="isShowStockIn">
+											<input type="text" class="input1" id="stock_inp" ng-change="stock_change($this)" ng-model="stock.stockCode" placeholder="股票代码、简拼" maxLength="6"/>
+										</div>
+									</div>
+
+									<div class="stock_list_wp ng-cloak" id="stock_list_wp" ng-show="isShowStockList">
+										<ul class="stock_list">
+											<li class="stock_item clearfix" ng-repeat="item in companyList" ng-click="selectStock(item)">
+												<span class="fl_lf txt_lf" ng-bind="item.stockCode"></span>
+												<span class="fl_rg txt_rf" ng-bind="item.stockName"></span>
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+
+								<div class="sel_wp">
+									<div class="sel_con">
+										<div class="btn reduce_btn" ng-class="{'btn_disable': stockItem.isMinPrice}" ng-click="stockItem.reducePrice()">
+											<div class="btn_txt1">-</div>
+											<div class="btn_txt2">0.01</div>
+										</div>
+										<div class="ip2_wp">
+											<input type="text" class="input2" ng-model="stockItem.price" ng-blur="stockItem.countMaxNumber()" placeholder="价格" ng-change="stockItem.changePrice()"/>
+										</div>
+										<div class="btn add_btn" ng-class="{'btn_disable': stockItem.isMaxPrice}" ng-click="stockItem.addPrice()">
+											<div class="btn_txt1">+</div>
+											<div class="btn_txt2">0.01</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="tip_wp clearfix">
+									<div class="txt_lf f_nega">跌停<span ng-bind="stockTimeInfo.HQJRDT ? stockTimeInfo.HQJRDT:'--'">--</span></div>
+									<div class="txt_rg f_posi">涨停<span ng-bind="stockTimeInfo.HQJRZT ? stockTimeInfo.HQJRZT:'--'">--</span></div>
+								</div>
+
+								<div class="sel_wp sel_wp2">
+									<div class="sel_con">
+										<div class="btn reduce_btn" ng-class="{'btn_disable': stockItem.isMinBuyNum}" ng-click="stockItem.reduceBuyNum()">
+											<div class="btn_txt1">-</div>
+											<div class="btn_txt2">100</div>
+										</div>
+										<div class="ip2_wp">
+											<input type="text" class="input2" ng-model="stockItem.buyNum" placeholder="数量" ng-change="stockItem.changeBuyNum()" ng-blur="stockItem.formatBuyNum()"/>
+										</div>
+										<div class="btn add_btn " ng-class="{'btn_disable': stockItem.isMaxBuyNum}" ng-click="stockItem.addBuyNum()">
+											<div class="btn_txt1">+</div>
+											<div class="btn_txt2">100</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="tip_wp2 clearfix">
+									<div class="tip2_txt"><span ng-bind="buyTxtDec">最大可买</span>：<span ng-bind="stockItem.maxBuyNum != undefined ? stockItem.maxBuyNum:'--'">--</span></div>
+								</div>
+
+								<div class="bot_btn_wp clearfix">
+									<a href="javascript:void(0);" ng-click="submit()" class="bot_btn bot_btn1" ng-bind="buySubmitDec">委托买入</a>
+									<a href="javascript:void(0);" ng-click="reset()"  class="bot_btn bot_btn2 btn_disable">重置</a>
+								</div>
+
+							</div>
+
+							<div class="con_rg">
+								<table class="con_r_tbl">
+									<tbody class="con_r_tb txt_in_line">
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQSJW5)">
+											<td class="td_1">卖<em class="no">5</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQSJW5_Rise , 'f_nega': stockTimeInfo.HQSJW5_Rise == false}" ng-bind="stockTimeInfo.HQSJW5 ? stockTimeInfo.HQSJW5:'--'">--</td>
+											<td class="td_3 " ng-bind="stockTimeInfo.HQSSL5 ? stockTimeInfo.HQSSL5:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQSJW4)">
+											<td class="td_1">卖<em class="no">4</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQSJW4_Rise , 'f_nega': stockTimeInfo.HQSJW4_Rise == false}" ng-bind="stockTimeInfo.HQSJW4 ? stockTimeInfo.HQSJW4:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQSSL4 ? stockTimeInfo.HQSSL4:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQSJW3)">
+											<td class="td_1">卖<em class="no">3</em>:</td>
+											<td class="td_2" ng-class="{'f_posi': stockTimeInfo.HQSJW3_Rise , 'f_nega': stockTimeInfo.HQSJW3_Rise == false}" ng-bind="stockTimeInfo.HQSJW3 ? stockTimeInfo.HQSJW3:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQSSL3 ? stockTimeInfo.HQSSL3:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQSJW2)">
+											<td class="td_1">卖<em class="no">2</em>:</td>
+											<td class="td_2" ng-class="{'f_posi': stockTimeInfo.HQSJW2_Rise , 'f_nega': stockTimeInfo.HQSJW2_Rise == false}" ng-bind="stockTimeInfo.HQSJW2 ? stockTimeInfo.HQSJW2:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQSSL2 ? stockTimeInfo.HQSSL2:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQSJW1)">
+											<td class="td_1">卖<em class="no">1</em>:</td>
+											<td class="td_2" ng-class="{'f_posi': stockTimeInfo.HQSJW1_Rise , 'f_nega': stockTimeInfo.HQSJW1_Rise == false}" ng-bind="stockTimeInfo.HQSJW1 ? stockTimeInfo.HQSJW1:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQSSL1 ? stockTimeInfo.HQSSL1:'--'">--</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<div class="line"></div>
+
+								<table class="con_r_tbl ">
+									<tbody class="con_r_tb txt_in_line">
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQBJW1)">
+											<td class="td_1 ">买<em class="no">1</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQBJW1_Rise , 'f_nega': stockTimeInfo.HQBJW1_Rise == false}" ng-bind="stockTimeInfo.HQBJW1 ? stockTimeInfo.HQBJW1:'--'">--</td>
+											<td class="td_3 " ng-bind="stockTimeInfo.HQBSL1 ? stockTimeInfo.HQBSL1:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQBJW2)">
+											<td class="td_1">买<em class="no">2</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQBJW2_Rise , 'f_nega': stockTimeInfo.HQBJW2_Rise == false}" ng-bind="stockTimeInfo.HQBJW2 ? stockTimeInfo.HQBJW2:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQBSL2 ? stockTimeInfo.HQBSL2:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQBJW3)">
+											<td class="td_1">买<em class="no">3</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQBJW3_Rise , 'f_nega': stockTimeInfo.HQBJW3_Rise == false}" ng-bind="stockTimeInfo.HQBJW3 ? stockTimeInfo.HQBJW3:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQBSL3 ? stockTimeInfo.HQBSL3:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQBJW4)">
+											<td class="td_1">买<em class="no">4</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQBJW4_Rise , 'f_nega': stockTimeInfo.HQBJW4_Rise == false}" ng-bind="stockTimeInfo.HQBJW4 ? stockTimeInfo.HQBJW4:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQBSL4 ? stockTimeInfo.HQBSL4:'--'">--</td>
+										</tr>
+										<tr class="con_r_tr" ng-click="setPrice(stockTimeInfo.HQBJW5)">
+											<td class="td_1">买<em class="no">5</em>:</td>
+											<td class="td_2 " ng-class="{'f_posi': stockTimeInfo.HQBJW5_Rise , 'f_nega': stockTimeInfo.HQBJW5_Rise == false}" ng-bind="stockTimeInfo.HQBJW5 ? stockTimeInfo.HQBJW5:'--'">--</td>
+											<td class="td_3" ng-bind="stockTimeInfo.HQBSL5 ? stockTimeInfo.HQBSL5:'--'">--</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</section>
+
+					<section class="sec2">
+						<div>
+							<table class="sec2_tbl">
+								<thead class="tbl_thd">
+									<tr class="tbl_thd_tr">
+										<th class="tr_td1">名称/代码</th>
+										<th class="tr_td2">股份/可用</th>
+										<th class="tr_td3">成本价/现价</th>
+									</tr>
+								</thead>
+							</table>
+							
+							<div class="sec2_tb2_wp" >
+								
+								<div class="mod_loading_wrap mod_loading_state0" id="buy_loading1">
+									<div class="loading1 ">
+										<span class="loading_ico"></span>
+										<span class="loading_txt">加载中...</span>
+									</div>
+									<div class="tip1"><span class="loading_txt">下拉刷新</span></div>
+									<div class="tip2"><span class="loading_txt">松开刷新</span></div>
+								</div>
+		
+								<div class="loading_wp sec2_tbl2_scroll" id="my_position_list2" ng-show="myPosition2.length > 0">
+									<div class="loading_box_wp" >
+
+										<table class="sec2_tbl sec2_tbl2 ng-cloak">
+											<tbody class="tbl_tb">
+												<tr class="tbl_tb_tr f_posi" ng-class="{'f_nega' : item.costPrice > item.nowPrice}" ng-repeat="item in myPosition2" ng-click="selectStock(item)">
+													<td class="tr_td1"><span ng-bind-template="{{item.stockName}} ({{item.stockCode}})"></span></td>
+													<td class="tr_td2"><span ng-bind-template="{{item.totalNum}}/{{item.todayNum}}"></span></td>
+													<td class="tr_td3"><span ng-bind-template="{{item.costPrice}}/{{item.nowPrice}}"></span></td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<!-- 没数据 -->
+								<div class="no_list_wp ng-cloak" ng-show="myPosition2.length == 0">
+									<div class="tip_wp2">
+										<div class="logo_wp">
+											<img class="logo_img" src="../../static/img/common/null_ico.png" alt="">
+										</div>
+										<div class="txt_wp">
+											<span class="t">暂无持仓记录</span>
+										</div>
+
+									</div>
+								</div>
+
+								</div>
+							</div>
+
+					</section>
+
+				</div>
+
+				<!-- 撤单 -->
+				<div class="base_tbl_wp tab_box_item" id="withdraw_wp">
+
+					<div class="base_tbl_box">
+						<table class="base_tbl_tbl">
+							<thead class="base_tbl_thd">
+								<tr class="b_b">
+									<th class="th1">名称/代码</th>
+									<th class="th2">类型/资金</th>
+									<th class="th3">价格/数量</th>
+									<th class="th4">委托时间</th>
+								</tr>
+							</thead>
+
+						</table>
+	
+						<div class="loading_content_wrap1">
+
+							<div class="mod_loading_wrap mod_loading_state0" id="withdraw_loading">
+								<div class="loading1 ">
+									<span class="loading_ico"></span>
+									<span class="loading_txt">加载中...</span>
+								</div>
+								<div class="tip1"><span class="loading_txt">下拉刷新</span></div>
+								<div class="tip2"><span class="loading_txt">松开刷新</span></div>
+							</div>
+
+							<div class="loading_wp loading_list_wrap1" id="withdraw_list_wrap" ng-show="widthdrawList.length > 0">
+								<div class="loading_box_wp">
+									
+									<table class="base_tbl_tbl">
+
+										<tbody class="base_tbl_tbd">
+
+											<tr class="tr b_b " ng-repeat="item in widthdrawList" data-id="{{item.applyId}}" >
+												<td class="td td1">
+													<div class="tbd_name_wp">
+														<div class="name txt_no_break" ng-bind="item.stockName"></div>
+														<div class="code txt_no_break" ng-bind="item.stockCode"></div>
+													</div>
+												</td>
+
+												<td class="td td2">
+													<div class="tbd_num_wp">
+														<div class="num1" ng-bind="item.typeDesc"></div>
+														<div class="num2 txt_no_break" ng-bind="item.totalMoney"></div>
+													</div>
+												</td>
+
+												<td class="td td3">
+													<div class="tbd_num_wp">
+														<div class="num1 txt_no_break" ng-bind="item.orderPrice"></div>
+														<div class="num2 txt_no_break" ng-bind="item.orderNum"></div>
+													</div>
+												</td>
+
+												<td class="td td4">
+													<div class="tbd_num_wp">
+														<div class="num1 txt_no_break" ng-bind="item.times[0]"></div>
+														<div class="num2 txt_no_break" ng-bind="item.times[1]"></div>
+													</div>
+												</td>
+											</tr>
+
+										</tbody>
+
+									</table>
+
+									</div>
+
+							</div>
+
+							<!-- 没数据 -->
+							<div class="no_list_wp ng-cloak" ng-show="widthdrawList.length == 0">
+								<div class="tip_wp">
+									<div class="logo_wp">
+										<img class="logo_img" src="../../static/img/common/null_ico.png" alt="">
+									</div>
+									<div class="txt_wp">
+										<span class="t">暂无委托记录</span>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				
+				<!-- 交易记录 -->
+				<div class="base_tbl_wp tab_box_item"  id="trans_wp">
+					<div class="base_tbl_box">
+						<table class="base_tbl_tbl">
+							<thead class="base_tbl_thd">
+								<tr class="b_b">
+									<th class="th1">成交时间</th>
+									<th class="th2">名称/代码</th>
+									<th class="th3">类型/资金</th>
+									<th class="th4">价格/数量</th>
+								</tr>
+							</thead>
+
+						</table>
+
+						<div class="loading_content_wrap1">
+
+							<div class="mod_loading_wrap mod_loading_state0" id="trans_loading">
+								<div class="loading1 ">
+									<span class="loading_ico"></span>
+									<span class="loading_txt">加载中...</span>
+								</div>
+								<div class="tip1"><span class="loading_txt">下拉刷新</span></div>
+								<div class="tip2"><span class="loading_txt">松开刷新</span></div>
+							</div>
+
+							<div class="loading_wp loading_list_wrap1" id="trans_list_wrap" ng-show="transList.length > 0">
+								<div class="loading_box_wp" >
+
+									<table class="base_tbl_tbl">
+
+										<tbody class="base_tbl_tbd">
+
+											<tr class="tr b_b " ng-repeat="item in transList">
+												<td class="td td1">
+													<div class="tbd_time_wp">
+														<div class="t1 t_bk txt_no_break" ng-bind="item.times[0]"></div>
+														<div class="t2 txt_no_break" ng-bind="item.times[1]"></div>
+													</div>
+												</td>
+
+												<td class="td td2">
+													<div class="tbd_num_wp">
+														<div class="num1 t_bk txt_no_break" ng-bind="item.stockName"></div>
+														<div class="num2 txt_no_break" ng-bind="item.stockCode"></div>
+													</div>
+												</td>
+
+												<td class="td td3">
+													<div class="tbd_num_wp">
+														<div class="num1 t_bk " ng-bind="item.typeDesc"></div>
+														<div class="num2 txt_no_break" ng-bind="item.tradeMoney"></div>
+													</div>
+												</td>
+
+												<td class="td td4">
+													<div class="tbd_num_wp">
+														<div class="num1 t_bk txt_no_break" ng-bind="item.dealPrice"></div>
+														<div class="num2 txt_no_break" ng-bind="item.dealNum"></div>
+													</div>
+												</td>
+											</tr>
+
+										</tbody>
+
+									</table>
+								</div>
+							</div>
+
+							<!-- 没数据 -->
+							<div class="no_list_wp ng-cloak" ng-show="transList.length == 0">
+								<div class="tip_wp">
+									<div class="logo_wp">
+										<img class="logo_img" src="../../static/img/common/null_ico.png" alt="">
+									</div>
+									<div class="txt_wp">
+										<span class="t">暂无交易记录</span>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 委托购买 dialog -->
+		<div class="mod_dialog ng-cloak" id="buy_dialog" ng-show="isShowBuyDialog">
+			<div class="mod_dialog_bg"></div>
+			<div class="mod_dialog_content">
+				<div class="content_wrap ">
+
+					<div class="layout1 tit2_wp">
+						<div class="tit_txt tit_b_b"><span ng-bind="buyDialog.title">买入确认</span></div>
+						<div class="space10"></div>
+						<div class="tip_txt">市场：A股模拟市场</div>
+						<div class="tip_txt">代码：<span ng-bind="buyDialog.stockCode">--</span></div>
+						<div class="tip_txt">名称：<span ng-bind="buyDialog.stockName">--</span></div>
+						<div class="tip_txt">价格：<span ng-bind="buyDialog.stockPrice">--</span></div>
+						<div class="tip_txt">数量：<span ng-bind="buyDialog.stockNum">--</span></div>
+						<div class="space10"></div>
+						<div class="btn_wp clearfix">
+							<a href="#" class="btn_base btn_lf btn_mid btn_disable" ng-click="cancalBuyDialog()">取消</a>
+							<a href="#" class="btn_base btn_rg btn_mid btn_blue" ng-click="submitBuyDialog()">确定</a> 
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 撤单dialog -->
+	<div class="mod_dialog hide" id="withdraw_dialog">
+		<div class="mod_dialog_bg"></div>
+		<div class="mod_dialog_content">
+			<div class="content_wrap content_wrap1">
+				<div class="control_wrap">
+					<div class="control_txt up_control" id="dia_withdraw_btn">撤单</div>
+					<div class="control_txt bot_control" id="dia_withdraw_buy_btn">撤单并重新买入</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="../../static/js_stock/config.js"></script>
+	<script data-main="service/trade/index01" src="../../static/js_stock/lib/require.js"></script>
+</body>
+</html>

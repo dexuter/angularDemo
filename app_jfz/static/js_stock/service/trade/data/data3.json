@@ -1,0 +1,44 @@
+{
+    "message": "success", 
+    "statusCode": "200", 
+    "data": {
+        "index": 1, 
+        "number": 2, 
+        "records": [
+            {
+                "accountId": 1, 
+                "id": 461565793, 
+                "stockCode": "007689", 
+                "stockName": "中国中车", 
+                "totalNum": 1700, 
+                "todayNum": 1000, 
+                "tomorrowNum": 500, 
+                "costPrice": 5.123,
+                "nowPrice": 5.256,  
+                "freezeNum": 200, 
+                "marketValue": 2300,
+                "profitRate": "0.0010", 
+                "updateTime": "2015-07-10 16:09:02", 
+                "nowProfit": 324.123, 
+                "nowProfitRate": 0.12
+            }, 
+            {
+                "accountId": 1, 
+                "id": 461565793, 
+                "stockCode": "007689", 
+                "stockName": "中国中车", 
+                "totalNum": 1700, 
+                "todayNum": 1000, 
+                "tomorrowNum": 500, 
+                "costPrice": 5.123,
+                "nowPrice": 4.68, 
+                "freezeNum": 200, 
+                "marketValue": 2300,
+                "profitRate": "-0.0010",  
+                "updateTime": "2015-07-10 16:09:02", 
+                "nowProfit": 324.123, 
+                "nowProfitRate": 0.12
+            }
+        ]
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width" />
+	<title>我的资产</title>
+	<link rel="stylesheet" href="../../static/css/common.css" />
+	<link rel="stylesheet" href="../../static/css/stock.css" />
+</head>
+<body >
+	
+	<div class="idx5_wp" ng-controller="accountCtrl">
+		<!-- 正 posi 负 nega -->
+		<div class="top_wp nega" ng-class="{'posi': myAssets.todayProfitRate > 0, 'nega':  myAssets.todayProfitRate < 0 }">
+			<div class="state_wp clearfix">
+				<div class="t_l">上证&nbsp;&nbsp;3856.98&nbsp;|&nbsp;-4.85%</div>
+				<div class="t_r">深成&nbsp;&nbsp;12938.63&nbsp;|&nbsp;-5.22%</div>
+			</div>
+
+			<div class="top_c_wp">
+				<div class="top_c1_wp">
+					<div class="c1_tip_wp clearfix">
+
+						<div class="c1_item1 c1_tip_1">当日收益</div>
+						<div class="c1_item2 c1_tip_2">总资金</div>
+						<div class="c1_item3 c1_tip_3">可用资金</div>
+					</div>
+
+					<div class="c1_con_wp clearfix">
+
+						<div class="c1_item1 c1_con_1" >--</div>
+						<div class="c1_item2 c1_con_2">
+							<span>--</span>元
+						</div>
+						<div class="c1_item3 c1_con_3">
+							<span>--</span>元
+						</div>
+					</div>
+				</div>
+
+				<div class="top_c2_wp">
+					<a href="#" class="c2_lk">再赚20000.00即可提现</a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="btn_wp">
+			<div class="btn_box clearfix">
+				<a href="#" class="btn buy_lk">买入</a>
+				<a href="#" class="btn sel_lk">卖出</a>
+			</div>
+		</div>
+
+		<div class="con_wp">
+			<div class="con_box">
+
+				<ul class="con_list clearfix">
+
+					<li class="list_item" >
+						<a class="list_link" href="index01.html?index=0">
+							<div class="logo_wp">
+								<img src="../../static/img/stock/trade/lg1.png" alt="" class="logo_img" />
+							</div>
+							<div class="txt_wp">
+								<span class="t">股票持仓</span>
+							</div>
+						</a>
+					</li>
+
+					<li class="list_item" >
+						<a class="list_link" href="index01.html?index=3">	
+							<div class="logo_wp">
+								<img src="../../static/img/stock/trade/lg2.png" alt="" class="logo_img" />
+							</div>
+							<div class="txt_wp">
+								<span class="t">撤单</span>
+							</div>
+						</a>
+					</li>
+
+					<li class="list_item" >
+						<a class="list_link" href="index01.html?index=4">
+							<div class="logo_wp">
+								<img src="../../static/img/stock/trade/lg3.png" alt="" class="logo_img" />
+							</div>
+							<div class="txt_wp">
+								<span class="t">交易记录</span>
+							</div>
+						</a>
+					</li>
+
+					<li class="list_item" >
+						<a class="list_link" href="#">
+							<div class="logo_wp">
+								<img src="../../static/img/stock/trade/lg4.png" alt="" class="logo_img" />
+							</div>
+							<div class="txt_wp">
+								<span class="t">提现</span>
+							</div>
+						</a>
+					</li>
+
+					<li class="list_item" >
+						<a class="list_link" href="#">
+							<div class="logo_wp">
+								<img src="../../static/img/stock/trade/lg5.png" alt="" class="logo_img" />
+							</div>
+							<div class="txt_wp">
+								<span class="t">收益分析</span>
+							</div>
+						</a>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="mod_dialog">
+			<div class="mod_dialog_bg"></div>
+			<div class="mod_dialog_content">
+				<div class="content_wrap">
+				
+					<!-- title type1 -->
+					<div class="layout1 tit1_wp">
+						<div class="tit_txt">免费炒股，大赚真钱！</div>
+					</div> 
+
+					<!-- title type2 -->
+					<!-- <div class="layout1 tit2_wp">
+						<div class="tit_txt tit_b_b">追加保证金</div>
+					</div> -->
+
+					<div class="layout1 tip_wp">
+						<div class="tip_txt">财神送你10000元股市创业本金，盈利能提现真钱哦~！</div>
+					</div>
+
+					<div class="layout1 btn_wp clearfix">
+						<a href="javascript:void(0);" class="btn_base btn_mid btn_blue" ng-click="createAccount()">确定</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="../../static/js_stock/config.js"></script>
+	<script data-main="service/trade/index12" src="../../static/js_stock/lib/require.js"></script>
+</body>
+</html>

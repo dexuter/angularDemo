@@ -1,0 +1,28 @@
+/*
+ * @author : chenyunlin
+ * @data   : 2015/07/27
+ * @desc   : 送20元话费
+ **/
+.tg_5{ padding: 0 15px; background-color: #f5a409;}
+.tg_5 .banner{ margin: 0 -15px;}
+.tg_5 .banner img{ width: 100%;}
+.tg5_box_1{ margin-top: 5px; background-color: #fefbf1; border-radius: 5px; position: relative; z-index: 100;}
+.tg5_box_1 .box_hd{ width: 269px; padding: 20px 0 25px; margin: 0 auto;}
+.tg5_box_1 .box_hd img{ }
+.tg5_box_1 .box_bd{ padding-bottom: 40px;}
+.tg5_box_1 .character{ }
+.tg5_box_1 .tip{ margin-top: 5px; font-size: 14px; color: #333; line-height: 28px; text-align: center;}
+.tg5_box_1 .tip .emphasis{ font-size: 22px; font-weight: bold; color: #fe4c1c;}
+.tg5_box_1 .invest{ width: 70%; margin: 35px auto 0;}
+.tg5_box_1 .invest .btn{ display: block; width: 100%; height: 50px; border-radius: 5px; background-color: #fe4c1c; font-size: 22px; color: #fff; line-height: 50px;  text-align: center;}
+.tg5_notice{ padding: 22px 0 15px; }
+.tg5_notice .notice_hd{}
+.tg5_notice .notice_bd{}
+.tg5_notice .notice_list{ padding-top: 15px; line-height: 21px; font-size: 14px; }
+.tg5_notice .notice_item{ color: #fff; }
+.tg5_notice .notice_item .notice_num{ float: left; width: 16px; height: 16px; margin: 2px 3px 0 0; border-radius: 50%; background-color: #fff; color: #fe4c1c; line-height: 16px; text-align: center;}
+.tg5_notice .notice_item p{}
+.tg5_notice .notice_itps{ color: #8d4f25;}
+.tg5_bottom_tips{ padding: 15px 0 35px; font-size: 12px; line-height: 18px; color: #fff;}
+.tg5_bottom_tips .p1{}
+.tg5_bottom_tips .p2{ margin-top: 5px;}

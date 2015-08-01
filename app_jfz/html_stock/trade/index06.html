@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width" />
+	<title>提现第一带绑卡</title>
+	<link rel="stylesheet" href="../../static/css/common.css" />
+	<link rel="stylesheet" href="../../static/css/stock.css" />
+</head>
+<body class="bg_f1">
+
+	<div class="stock_containter">
+		
+		<!-- 充值内容 -->
+		<div class="refill_containter">
+
+			<div class="mod_form_1">
+				<form action="" >
+					<div class="item tip_wrap">
+						<div class="tip4_box clearfix">
+							<div class="con_lf">
+								<div class="tip4_txt1">可提款金额</div>
+							</div>
+							<div class="con_rg">
+								<div class="tip4_txt1"><em class="money">1200.00</em>元</div>
+							</div>
+						</div>
+					</div>
+					<div class="item input_wrap">
+						<div class="input_control">
+							<input type="text" class="input_txt" placeholder="请输入提现金额">
+						</div>
+					</div>
+
+					<div class="item tip_wrap">
+						<div class="tip1_box">
+							<div class="tip1"><span class="txt">单笔限额5万，单日限额5万</span></div>
+						</div>
+					</div>
+
+					<div class="item input_wrap">
+						<div class="input_control">
+							<!-- <a href="#" class="select_bank">请选择开户行</a> -->
+							<select class="select_bank_list">
+								<option value="">请选择开户行</option>
+								<option value="1">中国银行</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="item input_wrap b_t_0">
+						<div class="input_control">
+							<input type="text" class="input_txt" placeholder="请输入银行卡号">
+						</div>
+					</div>
+					
+					<div class="item pact_wrap">
+						<div class="pact_control">
+							<span class="pact_ico check" id="pact_check"></span>
+							<span class="pact_txt">已同意并阅读</span>
+							<a href="#" class="pact_txt pact_link">《金斧子用户协议》</a>
+						</div>
+					</div>
+
+					<div class="item submit_wrap">
+						<a href="#" class="mod_base_btn mod_normal_btn mod_blue_btn">提交</a>
+					</div>
+
+					<div class="item tip_wrap">
+						<div class="tip2_box">
+							<div class="tip2"><span class="txt">如银行卡限额，请选择其他银行卡或到PC端进行充值</span></div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- 输入密码弹出框 -->
+	<div class="mod_dialog" id="pass_dialog">
+		<div class="mod_dialog_bg"></div>
+		<div class="mod_dialog_content">
+			<div class="content_wrap">
+				
+				<div class="layout1">
+
+					<div class="tit2_wp">
+						<div class="tit_txt tit_b_b">提款密码</div>
+					</div>
+
+					<div class="con_wrap1">
+						<div class="tip_txt1">请输入你的提款密码</div>
+					</div>
+
+					<div class="input_wrap1">
+						<div class="pd10">
+							<input class="input_type1" type="password" placeholder="请输入你的提款密码"/>
+						</div>
+					</div>
+					
+					<div class="tip_wrap2 clearfix">
+						<div class="tip_ico_wp fl_lf">
+							<em class="tip_logo"></em>
+							<span class="txt">提款密码不同于登陆密码</span>
+						</div>
+						<div class="tip_ico_wp fl_rg">
+							<a href="#" class="tip_link">忘记密码</a>
+						</div>
+					</div>
+
+					<div class="btn_wp clearfix">
+						<a href="javascript:void(0);" id="pass_dialog_close" class="btn_base btn_mid btn_lf btn_disable" >取消</a>
+						<a href="javascript:void(0);" id="pass_dialog_submit" class="btn_base btn_mid btn_rg btn_blue" >确定</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="../../static/js_stock/config.js"></script>
+	<script data-main="service/trade/index06" src="../../static/js_stock/lib/require.js"></script>
+</body>
+</html>

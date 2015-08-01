@@ -1,0 +1,36 @@
+{
+    "message": "success", 
+    "statusCode": "200", 
+    "data": {
+        "index": 1, 
+        "number": 1, 
+        "records": [
+            {
+                "applyId": "123456", 
+                "stockCode": "123456", 
+                "stockName": "中国中车", 
+                "type": 0, 
+                "typeDesc": "买入", 
+                "totalMoney": "123456.78", 
+                "orderPrice": "10.12", 
+                "orderNumber": "1000", 
+                "time": "2015-06-15 14:25:23", 
+                "status": "1", 
+                "statusDesc": "等待交易"
+            }, 
+            {
+                "applyId": "123456", 
+                "stockCode": "123456", 
+                "stockName": "中国中车", 
+                "type": 1, 
+                "typeDesc": "卖出", 
+                "totalMoney": "123456.78", 
+                "orderPrice": "10.12", 
+                "orderNumber": "1000", 
+                "time": "2015-06-15 14:25:23", 
+                "status": "2", 
+                "statusDesc": "交易成功"
+            }
+        ]
+    }
+}

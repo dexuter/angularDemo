@@ -1,0 +1,13 @@
+{
+    "stockList": [
+        {
+            "stockName": "leshi", 
+            "stockCode": 300104, 
+            "price": 44.10, 
+            "minPrice": 44.08, 
+            "maxPrice": 58.65, 
+            "minAmount": 0, 
+            "maxAmount": 2000
+        }
+    ]
+}

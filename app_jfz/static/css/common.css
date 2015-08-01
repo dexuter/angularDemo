@@ -1,0 +1,71 @@
+/*
+ * @author : zym
+ * @data   : 2015/05/28/
+ * @desc   : APP基金(mobile)
+ **/ 
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    重置    -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp, strike, strong, tt, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;	padding: 0;	border: 0; outline: 0; font-size: 100%;	vertical-align: baseline; background: transparent;}
+button, input, textarea{margin: 0; padding: 0;} 
+body,button,input,select,textarea{ font: 400 14px/1.5 "HelveticaLight", "Helvetica Neue", "Heiti SC", "Microsoft Yahei", tahoma,arial,sans-serif;}
+h1,h2,h3,h4,h5,h6,th{font-size:100%;font-weight:normal;}
+address,cite,dfn,em,var{font-style:normal;}
+code, kbd, pre, samp { font-family: 'courier new', courier, monospace; } 
+ul,ol{list-style:none;}
+button,input[type="submit"],input[type="button"]{-webkit-appearance: none;}
+input[type="radio"],input[type="checkbox"],input[type="submit"],input[type="reset"] { vertical-align: middle; cursor: pointer; }
+a{text-decoration:none;}
+a:hover,a:active{text-decoration:none;}
+:focus {outline: 0;}
+fieldset, img { border: 0; } 
+button, input, select, textarea {background:transparent; font-size: 100%; outline: 0;}
+table{border-collapse:collapse;border-spacing:0;}
+td,th{vertical-align:middle;}
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,summary, time, mark, audio, video {display: block; margin: 0; padding: 0;}
+img{ max-width: 100%; display: inline; vertical-align: middle;}
+@media screen and (min-width:480px) {
+ 	body{ width: 480px; margin: 0 auto;} 
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    通用    -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+::-webkit-scrollbar{ display: none;}/*取消侧边栏滚动条样式*/
+.hide{display: none;}
+.clearfix {*zoom: 1;}
+.clearfix:before,.clearfix:after {display: table; content: ""; height:0; clear:both; visibility: hidden;}
+/*font color*/
+.f_f60{ color: #f60;}
+.f_posi{ color: #f75352 }/*橙色，正值*/
+.f_nega{ color:#10d4c8;}/*绿色，负值*/
+/*space*/
+.space_5{ height: 5px;}
+.space_10{ height: 10px;}
+.space_20{ height: 20px;}
+.space_30{ height: 30px;}
+/*loading*/
+.mod_loading_wrap{ padding: 10px; text-align: center;}
+.mod_loading_wrap .loading_ico{ display: inline-block; width: 20px; height: 20px; margin-right: 5px; background: url(../img/common/loading.gif) no-repeat; background-size: 20px 20px; vertical-align: middle;}
+.mod_loading_wrap .loading_txt{ display: inline-block; vertical-align: middle; font-size: 12px; color: #999;}
+/*no data*/
+.mod_nodata_wrap{ padding: 40px 0;}
+.mod_nodata_wrap .nodata_ico{ display: block; width: 100px; height: 60px; margin:  0 auto; background: url(../img/common/null_ico.png) no-repeat; background-size: 100px 60px;}
+.mod_nodata_wrap .nodata_msg{ margin-top: 10px; line-height: 32px; text-align: center;}
+.mod_nodata_wrap .nodata_msg .txt{ font-size: 16px; color: #d8d8d8;}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    基金    -----------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.mod_fund_fixed_share_wrap{ height: 63px;}
+.mod_fund_fixed_share_wrap .fund_share_btn{ display: block; position: fixed; bottom:0; left: 0; right: 0; z-index: 100;}
+.mod_fund_fixed_share_wrap .inner{ padding: 12px 15px;  border-top: 1px solid #d1d1d1; background-color: #fff;}
+.mod_fund_fixed_share_wrap .inner .left{ float: left; width: 176px; height: 38px; margin-left: 5px; background: url(../img/common/fund/share_left.png) no-repeat; background-size: 176px 38px;}
+.mod_fund_fixed_share_wrap .inner .right{ float: right; width: 90px; height: 32px; margin-top: 3px; background-color: #299bf3; border-radius: 16px; line-height: 32px; text-align:center; color: #fff;}

@@ -1,0 +1,63 @@
+/*
+ * @author : zhuqin
+ * @data   : 2015/06/30
+ * @desc   : 股基指引
+ **/ 
+ @charset "UTF-8";
+img { max-width:100%; }
+.gj_container{/* width: 640px; margin: 0 auto;*/ background: #fff; }
+.gj_container .bd{ padding-bottom: 50px;}
+.gj_detail{ padding: 0 17px;}
+.detail_tit{ background: url(../../../img/activity/fund/tg_1/tit_bg.png) no-repeat; background-size: 196px 45px; width: 196px; height: 45px; text-align: center; line-height: 45px; margin: 20px auto 0 auto; color: #381211; font-size: 18px; font-family: "SimHei";}
+.detail_inner{ padding: 12px 10px; color: #323232; font-size: 12px; line-height: 18px; border: 1px #c8c8c8 dashed; margin-top: 28px;}
+.detail_inner .p_2{ padding-top: 18px;}
+.detail_txt{ text-align: center; color: #fd7e00; font-size: 18px; padding: 30px 0; line-height: 27px;}
+.detail_txt .txt_2{ padding-top: 15px;}
+.gj_list_box{ background: #ff9829; padding: 0 20px 32px 20px; color: #fff; border-bottom: 1px #ff9829 solid;}
+.gj_list_box .tit{ border-bottom: 1px #fff solid; line-height: 22px; height: 22px; padding: 8px 0;}
+.gj_list_box .item{ border-bottom: 1px #fff solid; padding: 8px 0;}
+.gj_list_box .tit .name{ font-size: 15px; float: left;}
+.gj_list_box .tit .more a{ color: #fff; float: right; font-size: 12px;}
+.gj_list_box .box_tit a{ font-size: 15px; line-height: 22px; color: #fff;}
+.gj_list_box .item_inner .left{ float: left;}
+.gj_list_box .item_inner .right{ float: right; padding-top: 8px;}
+.gj_list_box .item_inner span{ display: block;}
+.gj_list_box .buy_bnt{ width: 100px; height: 36px; background: url(../../../img/activity/fund/tg_1/buy_bg.png) no-repeat; background-size: 100px 36px; display: inline-block; text-align: center;}
+.gj_list_box .buy_bnt .sp_1{ color: #ff8400; font-size: 15px; line-height: 22px;}
+.gj_list_box .buy_bnt .sp_2{ color: #969696; font-size: 10px; line-height: 15px;}
+.gj_list_box .left .sp_1{ font-size: 10px; line-height: 15px; padding-top: 5px;}
+.gj_list_box .left .sp_2{ font-size: 23px; line-height: 34px;}
+.ft_box{ padding: 6px 20px 20px 20px;}
+.ft_list li.item{ width: 50%; margin-top: 16px;}
+.ft_list li.f_fl{ float: left;}
+.ft_list li.f_fr{ text-align: right; float: left;}
+.ft_list .list_img{ width: 27px; height:27px; display: inline-block; vertical-align: middle; margin-right: 5px;}
+.ft_list .list_txt{ font-size: 12px; color: #323232;}
+.gj_bnt{ position: fixed; left: 0; bottom: 0; right: 0; z-index: 99;}
+.gj_buy{ height: 50px; line-height: 50px; background-color: rgba(255,173,51,0.9); text-align: center; color: #fff; display: block; font-size: 20px;}
+
+/*----------------------------配资指引-----------------------------------*/
+.pz_container{ background: #d93d40; padding-bottom: 50px;}
+.pz_box_1{ background: url(../../../img/activity/fund/tg_1/pz_box1.png) no-repeat; width: 300px; height: 277px; margin: 0 auto; background-size: 300px 277px;}
+.box_1_text{ padding-top: 127px; text-align: center; color: #fff; font-size: 14px; line-height: 20px;}
+.box_1_text p{ padding-top: 12px;}
+.pz_box_2{ margin-top: 30px;}
+.pz_box2_cent{ background: #fdd400; padding-bottom: 14px; border-bottom: 2px #fdd400 solid;}
+.pz_box2_inner{ padding: 20px 0; text-align: center; color: #000; font-size: 16px; line-height: 24px;}
+.box2_detail{ background: url(../../../img/activity/fund/tg_1/box2_bg.png) no-repeat; width: 300px; height: 284px; background-size: 300px 284px; margin: 0 auto;}
+.detail_ifo{ padding-top: 29px;}
+.box2_ifo{ margin: 8px auto 0 auto; padding: 0 10px 0 20px; font-size: 12px; line-height: 18px; padding-top: 4px; color: #000;}
+.ifo_1{ background: url(../../../img/activity/fund/tg_1/ifo_1.png) no-repeat; background-size: 271px 45px; width: 241px; height: 41px;}
+.ifo_2{ background: url(../../../img/activity/fund/tg_1/ifo_2.png) no-repeat; background-size: 271px 60px; width: 241px; height: 56px;}
+.pz_box_3{ background: url(../../../img/activity/fund/tg_1/box3_bg.png) no-repeat; width: 300px; height: 378px; background-size: 300px 378px; margin: 21px auto 35px auto;}
+.box_3_text{ text-align: center; font-size: 16px; line-height: 24px; color: #fff; padding: 48px 15px 0 15px;}
+.box_3_text .num{ color: #fdd400; font-size: 20px;}
+.box_3_img{ width: 264px; height: 227px; margin: 0 auto; padding-top: 24px;}
+
+
+
+
+
+
+
+

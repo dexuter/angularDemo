@@ -1,0 +1,406 @@
+/*
+ * @author : djf
+ * @data   : 2015/07/17/
+ * @desc   : APP模拟炒股(mobile)
+ **/ 
+
+.loading_wp { position: absolute; z-index: 100; overflow: hidden;  }
+.loading_wp .loading_box_wp { position: absolute; z-index: 100; width: 100%; min-height: 101%; background-color: #fff; }
+.mod_loading_wrap { position: absolute; z-index: 50; top: 0; left: 0; width: 100%; height: 20px; }
+.mod_loading_state0 .loading1, .mod_loading_state0 .tip1, .mod_loading_state0 .tip2 { display: none; }
+.mod_loading_state1 .loading1, .mod_loading_state1 .tip2 { display: none; }
+.mod_loading_state2 .loading1, .mod_loading_state2 .tip1 { display: none; }
+.mod_loading_state3 .tip1, .mod_loading_state3 .tip2 { display: none; }
+
+.f_posi{ color: #ff8400 !important; }/*橙色，正值*/
+.f_nega{ color:#7aaf14 !important;}/*绿色，负值*/
+
+.fl_lf { float: left; }
+.fl_rg { float: right; }
+.pd10 { padding: 10px; }
+.space10 { height: 10px; }
+
+.txt_no_break { white-space:nowrap; }
+
+/*没数据*/
+.no_list_wp .tip_wp { margin-top: 100px; text-align: center; }
+.no_list_wp .tip_wp2 { margin-top: 40px; text-align: center; }
+.no_list_wp .logo_wp .logo_img { width: 86px; }
+.no_list_wp .tip_wp .txt_wp { margin-top: 12px; }
+.no_list_wp .txt_wp .t { font-size: 12px; line-height: 2; color: #c8c8c8; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    angular    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.ng-cloak { display: none; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    index01    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.idx1_wp { width: 100%; height: 100%; overflow: hidden; position: absolute; top: 0; left: 0; z-index: 10;}
+.idx1_wp .hd_con { }
+.idx1_wp .hd_wp {height: 32px; background-color: #f7f7f7; border-bottom: 1px solid #f0f0f0;}
+.idx1_wp .hd_wp .hd_list { padding-left: 4px; }
+.idx1_wp .hd_list .hd_item { float: left; border-bottom: 1px solid transparent; font-size: 14px; line-height: 32px; color: #606060; text-align: center; }
+.idx1_wp .hd_list .hd_item_type1 { width: 25%; }
+.idx1_wp .hd_list .hd_item_type2 { width: 16%; }
+.idx1_wp .hd_list .hd_item_txt { display: inline-block; padding: 0 4px; line-height: 32px; }
+.idx1_wp .hd_list .active .hd_item_txt{ color: #ff8400; border-bottom: 1px solid #ff8400; }
+
+
+.idx1_wp .sec1 { padding-top: 14px; background-color: #fff; }
+.idx1_wp .sec1 .con_lf { float: left; margin-left: 10px; width: 60%; }
+.idx1_wp .sec1 .con_lf .ip_wp { position: relative; height: 34px; border: 1px solid #1a8ef3; color: #666; }
+.idx1_wp .sec1 .con_lf .ip_wp_in { height: 34px; overflow: hidden; }
+.idx1_wp .sec1 .con_lf .input1 { padding: 8px 0; width: 100%; border: 0; font-size: 12px; line-height: 1.5; text-align: center; }
+.idx1_wp .sec1 .stock_list_wp { position: absolute; left: -1px; width: 100%; height: 154px; overflow: hidden; z-index: 999; border: 1px solid #999; background-color: #fff; }
+.idx1_wp .sec1 .stock_list_wp .stock_list { font-size: 12px; line-height: 1.5; color: #999; }
+.idx1_wp .sec1 .stock_list_wp .stock_item { padding: 6px 6px 6px 2px; border-bottom: 1px solid #999; }
+.idx1_wp .sec1 .con_lf .inp_show_box { padding: 8px 0; width: 100%; border: 0; font-size: 12px; line-height: 1.5; }
+.idx1_wp .sec1 .inp_show_box .txt { margin-left: 2px; margin-right: 2px; }
+	
+.idx1_wp .sec1 .con_lf .sel_wp { margin-top: 14px; }
+.idx1_wp .sec1 .con_lf .sel_con { position: relative; height: 32px; border: 1px solid #1a8ef3; }
+.idx1_wp .sec1 .con_lf .btn { position: absolute; top:0;  width: 34px; height: 100%; background-color: #1a8ef3; color: #fff; text-align: center; }
+.idx1_wp .sec1 .con_lf .btn_txt1 { line-height: 1; font-size: 16px; }
+.idx1_wp .sec1 .con_lf .btn_txt2 { font-size: 10px; line-height: 1.5; }
+.idx1_wp .sec1 .con_lf .add_btn { right: 0; }
+.idx1_wp .sec1 .con_lf .btn_disable { background-color: #999 !important; }
+.idx1_wp .sec1 .con_lf .ip2_wp { padding: 0 34px; }
+.idx1_wp .sec1 .con_lf .input2 { padding: 7px 0; width: 100%; border: 0; font-size: 12px; line-height: 1.5; text-align: center; }
+
+.idx1_wp .sec1 .con_lf .tip_wp { font-size: 12px; line-height: 20px; }
+.idx1_wp .sec1 .con_lf .txt_lf { float: left; }
+.idx1_wp .sec1 .con_lf .txt_rg { float: right; }
+
+.idx1_wp .sec1 .con_lf .tip_wp2 { font-size: 12px; line-height: 20px; }
+.idx1_wp .sec1 .con_lf .tip2_txt { color: #999; }
+
+.idx1_wp .sec1 .con_lf .sel_wp2 { margin-top: 0; }
+
+.idx1_wp .sec1 .con_lf .bot_btn_wp { margin-top: 10px; }
+.idx1_wp .sec1 .con_lf .bot_btn { display: inline-block; width: 46%; height: 28px; line-height: 28px; border-radius: 4px; text-align: center; color: #fff; background-color: #2298f3; }
+.idx1_wp .sec1 .con_lf .bot_btn1 { float: left; }
+.idx1_wp .sec1 .con_lf .bot_btn2 { float: right; }
+
+.idx1_wp .sec1 .con_rg { float: right; width: 30%; margin-right: 10px; }
+.idx1_wp .sec1 .con_rg .con_r_tbl { width: 100%; }
+.idx1_wp .sec1 .con_rg .con_r_tr { font-size: 12px; line-height: 1.5; text-align: center; }
+.idx1_wp .sec1 .con_rg .td_1 { width: 36px; color: #999; text-align: left; }
+.idx1_wp .sec1 .td_1 .no { display: inline-block; margin-right: 2px; width: 10px; height: 10px; line-height: 10px; border-radius: 6px; text-align: center; border: 1px solid #999; font-size: 10px; }
+.idx1_wp .sec1 .con_rg .td_2 { padding: 0 2px; width: 40%; color: #666; }
+.idx1_wp .sec1 .con_rg .td2_green { color: #7aaf14; }
+.idx1_wp .sec1 .con_rg .td2_red { color: #ff8400; } 
+.idx1_wp .sec1 .con_rg .td_3 { text-align: right; color: #666; }
+.idx1_wp .sec1 .con_rg .txt_in_line { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+
+.idx1_wp .sec1 .line { margin-top: 8px; padding-bottom: 8px; border-top: 1px dashed #999; }
+
+.idx1_wp .sec2 { margin-top: 22px; }
+.idx1_wp .sec2 .sec2_tbl{ width: 100%; }
+.idx1_wp .sec2 .sec2_tbl .tr_td1 { width: 33%; }
+.idx1_wp .sec2 .sec2_tbl .tr_td2 { width: 33%; }
+
+.idx1_wp .sec2 .sec2_tbl .tbl_thd { background-color: #f7f7f7; height: 36px; line-height: 36px; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4;  }
+.idx1_wp .sec2 .sec2_tbl .tbl_thd_tr { font-size: 14px; color: #8d8d8d; text-align: center; }
+.idx1_wp .sec2 .sec2_tbl .tbl_tb { background-color: #fff; }
+.idx1_wp .sec2 .sec2_tbl .tbl_tb_tr { height: 42px; line-height: 42px; border-bottom: 1px solid #e4e4e4; font-size: 12px; text-align: center; }
+.idx1_wp .sec2 .sec2_tbl .tr_green { color: #7aaf14; }
+.idx1_wp .sec2 .sec2_tbl .loading_tr { color: #c8c8c8; }
+.idx1_wp .sec2 .loading_tr .loading_img { width: 16px; margin-right: 4px; }
+
+.idx1_wp .sec2 .sec2_tb2_wp { position: absolute; top: 272px; bottom: 0; right: 0; z-index: 100; width: 100%;  }
+.idx1_wp .sec2 .sec2_tbl2_scroll { width: 100%; height: 100%; }
+
+.idx1_wp .bd_wp .loading_content_wrap1 { position: absolute; left: 0; right: 0; bottom: 0; top: 35px; }
+.idx1_wp .bd_wp .loading_list_wrap1 { width: 100%; height: 100%; }
+
+.idx1_wp .base_tbl_wp { }
+.idx1_wp .base_tbl_tbl { width: 100%; font-size: 12px; }
+.idx1_wp .base_tbl_thd { text-align: left; }
+.idx1_wp .b_b { border-bottom: 1px solid #e4e4e4; }
+.idx1_wp .base_tbl_thd th { padding: 8px 0 8px 16px; line-height: 1.5; color: #8d8d8d; }
+.idx1_wp .base_tbl_thd .th1, .idx1_wp .base_tbl_thd .th2, .idx1_wp .base_tbl_thd .th3 { width: 25%; }
+.idx1_wp .base_tbl_thd .th4 { padding-left: 0; padding-right: 12px; text-align: right; }
+.idx1_wp .base_tbl_tbl .td1, .idx1_wp .base_tbl_tbl .td2, .idx1_wp .base_tbl_tbl .td3 { width: 25%; }
+
+.idx1_wp .base_tbl_tbd {  }
+.idx1_wp .base_tbl_tbd .tr { line-height: 1.5; color: #8d8d8d; }
+.idx1_wp .base_tbl_tbd .td { padding: 8px 0 8px 16px;  }
+.idx1_wp .base_tbl_tbd .t {  }
+.idx1_wp .base_tbl_tbd .tbd_name_wp { display: inline-block; padding: 2px 0; width: 66px; text-align: center;  border: 1px solid #f2f2f2; border-radius: 3px; }
+.idx1_wp .base_tbl_tbd .tbd_name_wp .name { color: #333; }
+.idx1_wp .base_tbl_tbd .tbd_name_wp .code { color: #606060; }
+.idx1_wp .base_tbl_tbd .tbd_num_wp { padding: 2px 0; }
+.idx1_wp .base_tbl_tbd .td4 { padding-left: 0; padding-right: 12px; text-align: right; }
+
+.idx1_wp .base_tbl_tbd .col_posi { color: #ff8400; }
+.idx1_wp .base_tbl_tbd .col_nega { color: #7aaf14; }
+.idx1_wp .base_tbl_tbd .t_bk { color: #333; }
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    index02    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.idx2_wp { background-color: #f3f3f3; }
+.idx2_wp .hd_wp { height: 206px; }
+.idx2_wp .hd_posi { background-color: #fc8b10; }
+.idx2_wp .hd_nega { background-color: #1284db; }
+.idx2_wp .hd_box { padding: 18px 14px 0; color: #fff; }
+.idx2_wp .hd_top_wp { height: 144px; }
+.idx2_wp .hd_posi .hd_top_wp { border-bottom: 1px solid #fda545; overflow: hidden; }
+.idx2_wp .hd_nega .hd_top_wp { border-bottom: 1px solid #4195d5; overflow: hidden; }
+
+.idx2_wp .hd_line1 .t_l { float: left; font-size: 14px; line-height: 1.5; }
+.idx2_wp .hd_line1 .t_r { float: right; font-size: 10px; line-height: 21px; }
+
+.idx2_wp .hd_line2 { margin-top: 18px; text-align: center; }
+.idx2_wp .hd_line2 .t1 { font-size: 12px; line-height: 1.2; }
+.idx2_wp .hd_line2 .t2 { font-size: 44px; line-height: 1.2; } 
+.idx2_wp .hd_line2 .sf { font-size: 18px; }
+
+.idx2_wp .s_bot_wp { margin-top: 16px; }
+.idx2_wp .s_bot_list { line-height: 10px; text-align: center; }
+.idx2_wp .s_bot_li { display: inline-block; }
+.idx2_wp .s_bot_mid_li { margin: 0 4px; }
+.idx2_wp .s_bot_li .point { display: inline-block; width: 6px; height: 6px; border: 1px solid #fff; border-radius: 4px; }
+.idx2_wp .s_bot_li .active { background-color: #fff; }
+
+.idx2_wp .hd_tot_wp { margin-top: 6px; }
+.idx2_wp .hd_tot_wp .t { font-size: 16px; line-height: 2; }
+
+.idx2_wp .sec_wp { margin-top: 10px; }
+.idx2_wp .sec_list { padding: 8px 14px; background-color: #fff; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+.idx2_wp .sec_li { margin-top: 2px; margin-bottom: 2px; font-size: 12px; line-height: 2; }
+.idx2_wp .sec_li .t_l { float: left; color: #5a5a5a; }
+.idx2_wp .sec_li .t_r { float: right; color: #333; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    index03    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.idx3_wp .list_wp { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.idx3_wp .list_item .top_part { padding: 8px 12px 8px 14px; border-bottom: 1px solid #e4e4e4; }
+.idx3_wp .list_item .i_l { float: left; width: 90%; }
+.idx3_wp .list_item .i_r { float: right; line-height: 44px; }
+.idx3_wp .list_item .t_l { float: left; }
+.idx3_wp .list_item .t_r { float: right; }
+.idx3_wp .list_item .ln1 { font-size: 14px; line-height: 1.5; color: #333; }
+.idx3_wp .list_item .ln2 { margin-top: 2px; line-height: 21px; }
+.idx3_wp .list_item .ln2_t1 { font-size: 12px; color: #606060; }
+.idx3_wp .list_item .ln2_t2 { font-size: 18px; color: #ff8400; } 
+
+.idx3_wp .list_item .drt_wp { width: 14px; text-align: center; }
+.idx3_wp .list_item .drt_img { display: inline-block; width: 8px; height: 12px;  background: url(../img/stock/trade/direct.png) center right no-repeat; background-size: 8px auto; }
+.idx3_wp .drt_img_am { -webkit-animation: rotation .4s ease-out 1 both; }
+.idx3_wp .drt_img_ream { -webkit-animation: re_rotation .4s ease-out 1 both; }
+
+@-webkit-keyframes rotation {
+	  0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(90deg); }
+}
+
+@-webkit-keyframes re_rotation {
+	  0% { -webkit-transform: rotate(90deg); }
+	100% { -webkit-transform: rotate(0deg); }
+}
+
+.idx3_wp .list_item .bot_part { display: none; overflow: hidden; /*transition: height .6s; -webkit-transition: height .6s;*/ }
+.idx3_wp .list_item .bot_part_box {  padding: 8px 14px; background-color: #fbfbfb; border-bottom: 1px solid #e4e4e4; }
+.idx3_wp .bot_part .t { font-size: 12px; line-height: 1.4; color: #8d8d8d; }
+
+.idx3_wp .tip_wp { margin-top: 100px; text-align: center; }
+.idx3_wp .logo_wp .logo_img { width: 86px; }
+.idx3_wp .tip_wp .txt_wp { margin-top: 12px; }
+.idx3_wp .txt_wp .t { font-size: 12px; line-height: 2; color: #c8c8c8; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    index04    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.idx4_wp { background-color: #fff; color: #333; }
+.idx4_wp .b_b { border-bottom: 1px solid #e4e4e4; }
+.idx4_wp .ln1, .idx4_wp .ln3 { padding: 8px 14px;  }
+.idx4_wp .ln1 .t, .idx4_wp .ln3 .t { font-size: 12px;  line-height: 2; }
+.idx4_wp .ln2 { padding: 10px 40px; }
+.idx4_wp .ln2 .tip_item { float: left; width: 33%; font-size: 12px; line-height: 1.5;  }
+.idx4_wp .ln2 .tip_org { color: #ff8400; }
+.idx4_wp .ln2 .tip_qus { display: inline-block; margin-left: 2px; margin-top: -4px; width: 12px; height: 12px; vertical-align: middle; background: url(../img/stock/trade/qus.png) center center no-repeat; background-size: 12px auto; }
+.idx4_wp .ln2 .ct2, .idx4_wp .ln2 .ct22 { float: right; margin-right: 12px; }
+
+.idx4_wp .ln4 { padding: 10px 14px; }
+.idx4_wp .ln4_list .list_item { font-size: 12px; line-height: 1.5; }
+
+.idx4_wp .ln5 { padding: 10px 14px; }
+.idx4_wp .ln5_link { display: block; background: url(../img/stock/trade/direct.png) center right no-repeat; background-size: 8px auto; }
+.idx4_wp .ln5_link .t { font-size: 12px; color: #333; }
+
+.idx4_wp .ln6 { position: fixed; z-index: 100; width: 100%; max-width: 480px; bottom: 10px; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+.idx4_wp .ln6_wp { height: 40px; line-height: 40px; background-color: #fff; }
+.idx4_wp .ln6_wp .c_l { float: left; margin-left: 14px; font-size: 12px; }
+.idx4_wp .ln6_wp .c_l .t2 { color: #ff8400; }
+
+.idx4_wp .ln6_wp .c_r { float: right; width: 100px; text-align: center;  }
+.idx4_wp .ln6_wp .c_r .btn_active { background-color: #ff8400; }
+.idx4_wp .ln6_wp .c_r .btn_disable { background-color: #ccc; }
+.idx4_wp .ln6_wp .c_r .link1 { display: block; font-size: 12px; color: #fff; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    index05    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.idx5_wp {}
+.idx5_wp .top_wp {}
+.idx5_wp .state_wp { padding: 2px 14px; font-size: 12px; line-height: 1.5; color: #fff;  }
+.idx5_wp .nega .state_wp { background-color: #7ac1f8; }
+.idx5_wp .posi .state_wp { background-color: #f9c389; }
+.idx5_wp .state_wp .t_l { float: left; }
+.idx5_wp .state_wp .t_r { float: right; }
+
+.idx5_wp .top_c_wp { padding: 26px 14px 0; }
+.idx5_wp .nega .top_c_wp { background-color: #2298f3; }
+.idx5_wp .posi .top_c_wp { background-color: #f79831; }
+
+.idx5_wp .top_c1_wp { padding-bottom: 22px; border-bottom: 1px solid #fff; color: #fff; }
+.idx5_wp .top_c1_wp .c1_item1 { float: left; width: 38%; }
+.idx5_wp .top_c1_wp .c1_item2 { float: left; width: 30%; }
+.idx5_wp .top_c1_wp .c1_item3 { float: left; width: 32%; }
+.idx5_wp .c1_tip_wp { font-size: 12px; line-height: 1.5; }
+.idx5_wp .c1_tip_wp .c1_tip_3, .idx5_wp .c1_con_wp .c1_con_3  { text-align: right; }
+
+.idx5_wp .c1_con_wp { line-height: 22px; font-size: 12px; }
+.idx5_wp .c1_con_wp .c1_con_1 { font-size: 18px; }
+
+.idx5_wp .top_c2_wp { padding: 6px 0; }
+.idx5_wp .top_c2_wp .c2_lk { display: block; font-size: 12px; line-height: 2; height: 24px; overflow: hidden; color: #fff; background: url(../img/stock/trade/direct_w.png) center right no-repeat; background-size: 8px auto; }
+
+.idx5_wp .btn_wp { padding: 14px; border-bottom: 1px solid #e4e4e4; }
+.idx5_wp .btn_box .btn { width: 45%; border-radius: 6px; height: 42px; line-height: 42px; font-size: 14px; text-align: center; }
+.idx5_wp .btn_box .buy_lk { float: left; border: 1px solid #ff6600; color: #ff6600; }
+.idx5_wp .btn_box .sel_lk { float: right; border: 1px solid #1088e3; color: #1088e3; }
+
+.idx5_wp .con_wp { padding: 14px; border-bottom: 1px solid #e4e4e4; }
+.idx5_wp .con_wp .list_item { float: left; width: 25%; padding-bottom: 6px; text-align: center; }
+.idx5_wp .con_wp .list_item .list_link { display: block; }
+.idx5_wp .con_wp .logo_wp { height: 54px; }
+.idx5_wp .logo_wp .logo_img { width: 54px; }
+.idx5_wp .con_wp .txt_wp { margin-top: 4px; }
+.idx5_wp .con_wp .txt_wp .t { font-size: 12px; color: #8d8d8d; line-height: 2; }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------    提现    --------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+.bg_f1 { background-color: #f1f1f1; }
+.space_12 { height: 12px; }
+.space_20 { height: 20px; }
+/*输入*/
+.mod_form_1 .item { padding: 0 16px; }
+.mod_form_1 .input_wrap { position: relative; z-index: 10; height: 41px; background-color: #fff; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+.mod_form_1 .b_t_0 { border-top: 0; }
+.mod_form_1 .input_control { padding: 10px 0; }
+.mod_form_1 .input2_control { padding: 10px 20px 10px 0; }
+.mod_form_1 .input_wrap .input_txt { width: 100%; border: 0; font-size: 14px; line-height: 1.5; }
+.mod_form_1 .input_wrap .select_bank { display: block; font-size: 14px; line-height: 1.5; color: #606060; background: url(../img/stock/trade/direct.png) center right no-repeat; background-size: 8px auto;}
+.mod_form_1 .input_wrap .select_bank_list { display: block; width: 100%; font-size: 14px; line-height: 1.5; color: #606060; border: 1px solid #ccc; border-radius: 3px; }
+.mod_form_1 .input_wrap .bank_ico { margin-right: 8px; width: 16px; }
+
+.mod_form_1 .eye_wp { position: absolute; z-index: 20; top: 12px; right: 16px; }
+.mod_form_1 .eye_wp .eye { display: inline-block; width: 18px; height: 14px; background: url(../img/stock/trade/eye_h.png) center center no-repeat; background-size: 18px auto; }
+.mod_form_1 .eye_wp .eye_show { background-image: url(../img/stock/trade/eye_s.png); }
+
+/* 提示 */
+.mod_form_1 .tip1_box { padding: 4px 0 12px; }
+.mod_form_1 .tip_wrap .tip1:before { content: ''; display: inline-block; margin-right: 3px; width: 12px; height: 12px; vertical-align: middle; background: url(../img/stock/trade/draw_tip.png) center center no-repeat; background-size: 12px auto; }
+.mod_form_1 .tip_wrap .tip1 { font-size: 12px; line-height: 1.5; color: #999; }
+.mod_form_1 .tip_wrap .tip1 .txt { display: inline-block; vertical-align: middle; }
+
+.mod_form_1 .tip2_box { padding: 12px 0; }
+.mod_form_1 .tip2 .txt { font-size: 12px; line-height: 1.8; color: #999; }
+
+.mod_form_1 .tip3_box { padding: 18px 0 10px; }
+.mod_form_1 .tip3 .txt { font-size: 14px; color: #333; }
+.mod_form_1 .tip3 .txt_bl { display: inline-block; margin-left: 4px; color: #606060; }
+
+.mod_form_1 .tip4_box { padding: 10px 0; }
+.mod_form_1 .con_lf { float: left; }
+.mod_form_1 .con_rg { float: right; } 
+.mod_form_1 .tip_wrap .tip4_txt1 { font-size: 14px; line-height: 1.5; color: #606060; }
+.mod_form_1 .tip_wrap .money { color: #ff8400; }
+/* 协议 */
+.mod_form_1 .pact_wrap .pact_control { padding: 12px 0 14px; }
+.mod_form_1 .pact_wrap .pact_ico { display: inline-block; vertical-align: middle; margin-right: 6px; width: 16px; height: 16px; border: 1px solid #dcdcdc; background-color: #fff; }
+.mod_form_1 .pact_wrap .check { background: url(../img/stock/trade/right_ico.png) center center no-repeat #fff; background-size: 12px auto; }
+.mod_form_1 .pact_wrap .pact_txt { display: inline-block; vertical-align: middle; font-size: 12px; line-height: 1.2; color: #999; }
+.mod_form_1 .pact_wrap .pact_link { color: #2298f3; }
+
+/*按钮*/
+.mod_base_btn { display: inline-block; border-width: 1px; border-style: solid; border-radius: 4px; text-align: center; }
+.mod_normal_btn { width: 100%; height: 42px; line-height: 42px; font-size: 18px; }
+.mod_blue_btn { border-color: #2298f3; background-color: #2298f3; color: #fff; }
+
+/*认证结果*/
+.att_res_wrap { padding-top: 130px; }
+.att_res_wrap .res { height: 55px; background-size: auto 54px; background-position: center center; background-repeat: no-repeat; }
+.att_res_wrap .txt { padding-top: 14px; font-size: 14px; line-height: 1.5; text-align: center; }
+.att_res_success .res { background-image: url(../img/stock/trade/attest_sus.png); }
+.att_res_success .txt { color: #4DBFFF; }
+.att_res_fail .res { background-image: url(../img/stock/trade/attest_fail.png); }
+.att_res_fail .txt { color: #b7b7b7; }
+
+.att_res_control { padding-top: 80px; }
+
+/*tab*/
+.tab_wrap { position: relative; }
+.tab_box_item { position: absolute; z-index: 100; top: 2px; left: 0; display: none; width: 100%; background-color: #fff; }
+.tab_show_item { display: block; z-index: 200; }
+.tab_future_item { z-index: 300; }
+
+/*dialog*/
+.mod_dialog { position: fixed; z-index: 500; top: 0; left: 0; right: 0; bottom: 0; }
+.mod_dialog .mod_dialog_bg { position: absolute; z-index: 10; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); }
+.mod_dialog .mod_dialog_content { position: absolute; z-index: 20; left: 50%; top: 30%; margin-left: -45%; width: 90%;   }
+/*dialog content*/
+.mod_dialog_content .content_wrap { color: #333; border-radius: 4px; background-color: #fff; }
+.mod_dialog_content .content_wrap1 { padding: 8px 20px; }
+.mod_dialog_content .layout1 { padding: 0 12px; }
+.mod_dialog_content .tit1_wp { padding-top: 22px; }
+.mod_dialog_content .tit_txt { font-size: 16px; text-align: center; line-height: 1.5; }
+
+.mod_dialog_content .tit2_wp { padding-top: 10px; }
+.mod_dialog_content .tit2_wp .tit_b_b { padding-bottom: 10px; border-bottom: 1px solid #dadada; }
+
+/**/
+.mod_dialog_content .control_txt { text-align: center; font-size: 18px; line-height: 1.5;  }
+.mod_dialog_content .control_wrap .up_control { padding-bottom: 4px; border-bottom: 1px solid #ccc; }
+.mod_dialog_content .control_wrap .bot_control { padding-top: 5px; }
+/*txt*/
+.mod_dialog_content .content_wrap .tip_wp { margin-top: 2px; padding-bottom: 12px; }
+.mod_dialog_content .content_wrap .tip_txt { font-size: 14px; line-height: 1.8; color: #606060; }
+/*botton*/
+.mod_dialog .btn_wp { padding-bottom: 14px; text-align: center; }
+.mod_dialog .btn_wp .btn_base { display: inline-block; height: 38px; line-height: 38px; border-radius: 3px; font-size: 16px; border-width: 1px; border-style: solid; }
+.mod_dialog .btn_wp .btn_mid { width: 47%; }
+.mod_dialog .btn_wp .btn_ful { width: 100%; }
+.mod_dialog .btn_wp .btn_lf { float: left; }
+.mod_dialog .btn_wp .btn_rg { float: right; }
+.mod_dialog .btn_wp .btn_disable { border-color: #dedede; color: #606060; background-color: #fff; }
+.mod_dialog .btn_wp .btn_blue { border-color: #2298f3; color: #fff; background-color: #2298f3; }
+
+/*content*/
+.mod_dialog_content .con_wrap1 { padding: 4px 0; }
+.mod_dialog_content .tip_txt1 { font-size: 14px; line-height: 2; color: #333; }
+
+.mod_dialog_content .input_wrap1 { border: 1px solid #cacaca; border-radius: 3px; height: 38px; }
+.mod_dialog_content .input_type1 { width: 100%; border: 0; font-size: 14px; line-height: 1.5; }
+
+.mod_dialog_content .tip_wrap2 { padding-top: 10px; padding-bottom: 14px; }
+
+.mod_dialog_content .tip_ico_wp { height: 24px; line-height: 24px; }
+.mod_dialog_content .tip_ico_wp .tip_logo { display: inline-block; margin-right: 2px; width: 12px; height: 12px; vertical-align: middle; background: url(../img/stock/trade/draw_tip.png) center center no-repeat; background-size: 12px auto; }
+.mod_dialog_content .tip_ico_wp .txt { display: inline-block; vertical-align: middle; font-size: 12px; line-height: 1.5; color: #999; }
+.mod_dialog_content .tip_link { font-size: 12px; line-height: 1.5; color: #2298f3; }
+
+/*提示框*/
+.message_dialog { position: fixed; z-index: 1000; top: 0; left: 0; right: 0; bottom: 0; }
+.message_dialog .message_bg { position: absolute; z-index: 10; width: 100%; height: 100%; background-color: transparent; }
+.message_dialog .message_content { position: absolute; z-index: 20; top: 40%; left: 50%; margin-left: -45%; width: 90%; }
+.message_dialog .content_wrap { padding: 6px 12px; background-color: rgba(105, 105, 105, 0.65); border-radius: 3px; }
+.message_dialog .content_txt { font-size: 14px; line-height: 1.5; color: #fff; text-align: center; }
+
