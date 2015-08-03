@@ -1,4 +1,5 @@
 // require.js config
+//修改config.js文件
 var require = {
 	baseUrl: '/plugin/app_jfz/static/js_stock',
 
